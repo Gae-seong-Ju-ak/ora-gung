@@ -21,49 +21,58 @@
     <!-- 파비콘 파일명 및 사이즈 명시, 추후 파비콘 파일 링크 추가하고 본 주석문 및 위 link 주석문 삭제 -->
 
     <!-- Preload critical assets -->
-    <link rel="preload" href="#" as="font" type="font/woff2" crossorigin>
+    <!-- 프리텐다드 다이나믹 서브셋 웹폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <link rel="preload" href="#" as="style">
-    <!-- 주요 폰트, css를 미리로드 하여 성능 개선, 추후 폰트, css 링크 추가하고 본 주석문 삭제 -->
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
-    
+
 
     <!-- Scripts -->
 
     <!-- Alternate language versions -->
     <link rel="alternate" hreflang="en" href="#">
     <!-- 다국어 사이트의 경우, 다른 언어의 버전을 링크, 추후 다른 언어의 사이트 링크 추가하고 본 주석문 삭제, 추가 예정이 없다면 그냥 삭제 -->
+</head>
 
 <body>
-    <div id="content">
-        <header class="nav-down">
-            <a href="#" id="logo-link">
-                <img src="#" alt="헤더로고" class="header-logo">
-            </a>
-            <nav>
-                <!-- 네비게이션 -->
-                <a href="#" class="nav-link">콘텐츠1</a>
-                <a href="#" class="nav-link">콘텐츠2</a>
-                <a href="#" class="nav-link">콘텐츠3</a>
-            </nav>
+    <div class="l-content">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__brand">
+                    <a href="#" class="header__logo-link">
+                        <img src="./assets/images/logo.webp" alt="오라, 궁 홈페이지" class="header__logo">
+                    </a>
+                </div>
+                <nav class="nav" role="navigation" aria-label="메인 메뉴">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--active">Planning</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Design</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Service</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <main>
-            <section></section>
+            <section>
+            </section>
         </main>
 
         <footer>
-            <!-- 푸터는 귀찮아서 나중에 함 -->
-            <!-- 대충 풀 리퀘스트 받으려고 푸터에 주석문 추가 했다는 내용 -->
-            <!-- 푸터 내가 만들거라는 것. -->
         </footer>
     </div>
 
-    <!-- Scripts -->
-    <script src="./assets/js/header.js"></script>
+    <script src="./assets/scripts/header.js"></script>
 </body>
 
 </html>
