@@ -9,59 +9,67 @@
 
 /* 기본 스타일 설정 */
 html {
-    font-size: 6px; /* 기본 폰트 크기 */
-    scroll-behavior: smooth; /* 스크롤 부드럽게 */
-}
-
-/* 작은 태블릿 */
-@media screen and (min-width: 768px) {
-    html {
-        font-size: 8px; /* 태블릿에서의 폰트 크기 */
-    }
-}
-
-/* 일반 태블릿 (min-width: 1024px) */
-@media screen and (min-width: 1024px) {
-    html {
-        font-size: 9px; /* 1024px에서의 폰트 크기 */
-    }
-}
-
-/* 노트북 (min-width: 1280px) */
-@media screen and (min-width: 1280px) {
-    html {
-        font-size: 10px; /* 1280px 이상의 폰트 크기 */
-    }
-}
-
-/* 큰 데스크탑 (min-width: 1440px) */
-@media screen and (min-width: 1440px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-/* 대형 디스플레이 (min-width: 1920px) */
-@media screen and (min-width: 1920px) {
-    html {
-        font-size: 16px;
-    }
+    font-size: 4px;
 }
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     background-color: #F3F1F1;
-    margin: 0 5%;
 }
+
 
 .l-content {
     width: 100%;
     max-width: 1920px;
+    padding: 0 5%;
     margin: 0 auto;
-    padding-top: 6.25rem;
     background-color: #F3F1F1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
+/* 기본 레이아웃 설정 */
+.video__content {
+    flex-direction: column;
+}
+
+.video__content-wrapper {
+    flex-direction: row;
+}
+
+/* 미디어 쿼리 */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 12px;
+    }
+
+    .video__content {
+        flex-direction: row;
+    }
+
+    .video__content-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 16px;
+    }
+}
