@@ -7,33 +7,41 @@
     box-sizing: border-box;
 }
 
-/* 더 단순화된 버전 */
+/* 기본 스타일 설정 */
 html {
-    font-size: 6px;
-    scroll-behavior: smooth;
+    font-size: 6px; /* 기본 폰트 크기 */
+    scroll-behavior: smooth; /* 스크롤 부드럽게 */
 }
 
-/* 태블릿 & 작은 데스크탑 */
+/* 작은 태블릿 */
 @media screen and (min-width: 768px) {
     html {
-        font-size: 8px;
+        font-size: 8px; /* 태블릿에서의 폰트 크기 */
     }
 }
 
-/* 데스크탑 */
+/* 일반 태블릿 (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 9px; /* 1024px에서의 폰트 크기 */
+    }
+}
+
+/* 노트북 (min-width: 1280px) */
 @media screen and (min-width: 1280px) {
     html {
-        font-size: 10px;
+        font-size: 10px; /* 1280px 이상의 폰트 크기 */
     }
 }
 
+/* 큰 데스크탑 (min-width: 1440px) */
 @media screen and (min-width: 1440px) {
     html {
         font-size: 12px;
     }
 }
 
-/* 대형 디스플레이 */
+/* 대형 디스플레이 (min-width: 1920px) */
 @media screen and (min-width: 1920px) {
     html {
         font-size: 16px;
