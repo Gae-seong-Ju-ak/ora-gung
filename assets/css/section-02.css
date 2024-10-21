@@ -1,0 +1,110 @@
+.background {
+    text-align: center;
+}
+
+.bgstitle {
+    margin-top: 1rem;
+}
+
+.bgstitle .circle {
+    width: .5rem;
+    height: .5rem;
+    background-color: #00A695;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.bgstitle>h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #121212;
+}
+
+.bgcontent {
+    margin-top: 2rem;
+}
+
+.bgcontent .bgtit>h3 {
+    margin: 0;
+    font-size: 3rem;
+    color: #121212;
+}
+
+.bgcontent .bgtit>h3 span {
+    color: #00A695;
+}
+
+.bgtxt {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.line {
+    animation: moveLine 2s linear infinite;
+}
+
+
+@keyframes moveLine {
+    0% {
+        stroke-dasharray: 10, 222;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 100, 222;
+        stroke-dashoffset: -232;
+        /* Adjust based on the length of the line */
+    }
+}
+
+.bgcontent2 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 42rem;
+    background-color: #00A695;
+    border-radius: 3rem;
+    z-index: 2;
+
+}
+
+.bgq {
+    margin-top: 7rem;
+    width: 40rem;
+    height: 4rem;
+    background-color: #F6F6F6;
+    display: inline-block;
+    border-radius: 5rem 5rem 5rem 5rem;
+}
+
+.bgq>h2 {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+}
+
+.bgq>h2>span {
+    color: #00A695;
+    font-weight: 800;
+}
+
+.bgapp {
+    margin-top: 5rem;
+}
+
+.bgapp p {
+    color: #F6F6F6;
+    margin-top: 5rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+.line2 {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 5rem;
+    z-index: -1;
+}
