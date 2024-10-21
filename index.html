@@ -22,12 +22,15 @@
 
     <!-- Preload critical assets -->
     <!-- 프리텐다드 다이나믹 서브셋 웹폰트 -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
     <link rel="preload" href="#" as="style">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/section-01.css">
+    <link rel="stylesheet" href="./assets/css/section-02.css">
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
 
 
@@ -36,14 +39,6 @@
     <!-- Alternate language versions -->
     <link rel="alternate" hreflang="en" href="#">
     <!-- 다국어 사이트의 경우, 다른 언어의 버전을 링크, 추후 다른 언어의 사이트 링크 추가하고 본 주석문 삭제, 추가 예정이 없다면 그냥 삭제 -->
-    <style>
-        section {
-            width: 100%;
-            max-width: 1920px;
-            margin: 0 auto;
-            height: 100vh;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,7 +47,7 @@
             <div class="header__container">
                 <div class="header__brand">
                     <a href="#" class="header__logo-link">
-                        <img src="./assets/images/logo.webp" alt="오라, 궁 홈페이지" class="header__logo">
+                        <img src="./assets/images/logo-symbol.webp" alt="오라, 궁 홈페이지" class="header__logo">
                     </a>
                 </div>
                 <nav class="nav" role="navigation" aria-label="메인 메뉴">
@@ -75,11 +70,138 @@
         </header>
 
         <main>
-            <section id="intro">
+            <section class="section" id="intro">
             </section>
 
-            <section id="sec-01">
-                <h1>한국 </h1>
+            <section class="section" id="sec-01">
+                <div class="fixed-bg"></div>
+                <p class="section__description">원포인트로 즐기는 4대궁 투어</p>
+                <div class="section__header">
+                    <h1 class="section__title">한국 궁궐의 문을 열다</h1>
+                    <img class="section__image" src="./assets/images/logo-symbol.webp" alt="로고">
+                </div>
+
+                <div class="overview">
+                    <p class="overview__title">Overview</p>
+                    <p class="overview__description">원포인트로 즐기는 K-컬쳐,<br>서울 4대 궁궐 투어 앱 서비스</p>
+                </div>
+
+                <div class="video">
+                    <video src="./assets/videos/exaple-video.mp4" class="video__player" autoplay loop muted
+                        preload="metadata"></video>
+                    <div class="video__content-wrapper">
+                        <div class="video__content">
+                            <div class="content-title-wrap">
+                                <p class="video__content-title">Project Vision</p>
+                            </div>
+                            <p class="video__content-description">
+                                서울 4대 궁궐에 특화된 ‘4대 궁궐 투어 앱’ 으로써
+                                AR을 활용해 사용자 스스로가 투어의 주체가 되어
+                                능동적으로 콘텐츠 탐색하도록 유도하고
+                                사용자 특화된 맞춤형 기능을 제공해
+                                번거로움 없이 4대 궁궐 투어를 즐기도록 하는 것
+                            </p>
+                        </div>
+                        <div class="video__content">
+                            <div class="content-title-wrap">
+                                <p class="video__content-title">Target Audience</p>
+                            </div>
+                            <p class="video__content-description">
+                                한류 콘텐츠와 한국 전통 문화 체험을 위해 외국인들의 방한
+                                사례가 증가하고 있는 상황 속,
+                                이를 위해 정부는 세계인의 호기심을 자극하는 K-컬처와
+                                관광을 융합시켜 한국의 정수를 경험할 수 있는 고품격 관광
+                                콘텐츠를 확충하려고 한다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="keyword">
+                    <div class="keyword__item">
+                        <p class="keyword__text">키워드</p>
+                    </div>
+                    <div class="keyword__item">
+                        <img class="keyword__image" src="#" alt="이미지 입니다">
+                    </div>
+                    <div class="keyword__item">
+                        <p class="keyword__text">키워드</p>
+                    </div>
+                    <div class="keyword__item">
+                        <p class="keyword__text">키워드</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="section" id="sec-02">
+                <div class="background">
+
+                    <div class="bgstitle">
+                        <div class="circle"></div>
+                        <h2>Background</h2>
+                    </div>
+
+                    <div class="bgcontent">
+
+                        <div class="bgtit">
+                            <h3>
+                                <span>Welcome to Korea !</span> <br>
+                                2024년, 한국 방문의 해
+                            </h3>
+                        </div>
+
+                        <div class="bgtxt">
+                            <p>
+                                2024년 '한국 방문의 해'를 맞아 한류 콘텐츠와 전통 문화 체험을 목적으로 한 외국인 관광객들이 증가하고 있습니다. <br>
+                                짧은 일정 속에서도 한국의 역사와 문화를 깊이경험할 수 있도록, 서울 4대 궁궐을 중심으로 <br>
+                                한 투어 앱 서비스의 필요성이 대두되고 있습니다. <br>
+                            </p>
+                        </div>
+
+                        <svg class="line">
+                            <line width="1" height="60" x1="150" y1="30" x2="150" y2="100" stroke="#00A695"
+                                stroke-width="1" />
+                        </svg>
+
+                        <div class="bgcontent2">
+                            <div class="bgq">
+                                <h2>
+                                    외국인 관광객들을 위한 <span>4대궁 중심의 원터치 여행</span>을 제공하는건 어떨까?
+                                </h2>
+                            </div>
+
+                            <div class="bgapp">
+                                <img src="./assets/images/logo.svg" alt="" class="logo">
+                                <p>
+                                    외국인 관광객에게 적합한 개인화된 코스로 번거로움 없이 사용자가 직접 ‘역사 속 인물’이라는 1인칭 시점으로 AR을<br />
+                                    통해 한국 궁궐을 능동적으로 탐방할 수 있도록 설계되어 4대 궁궐에 특화된 투어 앱 ‘오라, 궁’은 외국인 관광객이<br />
+                                    한정된 여행 일정 속에서도 4대 궁궐에 집중된 깊이 있는 투어를 즐길 수 있도록 합니다.
+                                </p>
+                                <svg width="100%" height="100%" viewBox="0 0 1000 300"
+                                    xmlns="http://www.w3.org/2000/svg" class="line2">
+                                    <path d="M 0 50 C 50 200, 300 100, 305 100 S 500 0, 1000 100" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 70 C 50 220, 300 110, 305 110 S 500 5, 1000 105" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 90 C 50 240, 300 120, 305 120 S 500 10, 1000 110" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 110 C 50 260, 300 130, 305 130 S 500 15, 1000 115" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 130 C 50 280, 300 140, 305 140 S 500 20, 1000 120" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 160 C 50 310, 300 150, 305 150 S 500 25, 1000 125" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 180 C 50 330, 300 160, 305 160 S 500 30, 1000 130" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                    <path d="M 0 210 C 50 350, 300 170, 305 170 S 500 35, 1000 135" stroke="#E6F3E7"
+                                        stroke-width="1.5" fill="none" opacity="0.5" />
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 

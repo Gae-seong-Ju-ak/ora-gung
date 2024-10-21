@@ -9,21 +9,27 @@
 
 /* 더 단순화된 버전 */
 html {
-    font-size: 8px;
+    font-size: 6px;
     scroll-behavior: smooth;
 }
 
 /* 태블릿 & 작은 데스크탑 */
 @media screen and (min-width: 768px) {
     html {
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
 /* 데스크탑 */
 @media screen and (min-width: 1280px) {
     html {
-        font-size: 14px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 12px;
     }
 }
 
@@ -36,14 +42,18 @@ html {
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: #F3F1F1;
+    margin: 0 5%;
 }
 
 .l-content {
-    width: calc(100% - 10%);
+    width: 100%;
     max-width: 1920px;
     margin: 0 auto;
     padding-top: 6.25rem;
-    background: #ffffff;
-    height: 1000vh;
+    background-color: #F3F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

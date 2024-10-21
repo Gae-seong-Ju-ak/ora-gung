@@ -1,0 +1,141 @@
+.section {
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    margin-bottom: 18.75rem;
+}
+
+.section__description {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.15rem;
+}
+
+.section__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 7.5rem;
+}
+
+.section__title {
+    font-size: 3.75rem;
+    font-weight: 600;
+    letter-spacing: -1%;
+    text-align: left;
+}
+
+.section__image {
+    width: 7.75rem;
+    margin-left: 1.875rem;
+}
+
+.overview {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 6rem;
+    margin-bottom: 6.625rem;
+}
+
+.overview__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00A695;
+}
+
+.overview__description {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #000000;
+}
+
+.video {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 6.625rem;
+}
+
+.video__player {
+    width: 46.063rem;
+    height: 26rem;
+    border-radius: 1.875rem;
+    margin-right: 9.313rem;
+}
+
+.video__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6.75rem;
+    padding-top: 3.5rem;
+}
+
+.video__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.content-title-wrap {
+    width: 11.5rem;
+}
+
+.video__content-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    color: #00A695;
+    display: inline-block;
+    width: 11.5rem;
+    white-space: nowrap;
+}
+
+.video__content-description {
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-align: justify;
+    color: #000000;
+    line-height: 1.6;
+    margin-left: 7.313rem;
+}
+
+.keyword {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyword__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25.313rem;
+    height: 11.688rem;
+    border-radius: 10000rem;
+}
+
+.keyword__item:nth-child(1) {
+    background: #00A695;
+}
+
+.keyword__item:nth-child(2) {
+    background: #D9D9D9;
+}
+
+.keyword__item:nth-child(3) {
+    background: #E16350;
+}
+
+.keyword__item:nth-child(4) {
+    background: #E7E6D2;
+}
+
+.keyword__text {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #F3F1F1;
+}
