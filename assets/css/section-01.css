@@ -1,7 +1,5 @@
 .section {
     width: 100%;
-    max-width: 1920px;
-    height: 100vh;
     margin-bottom: 18.75rem;
 }
 
@@ -60,7 +58,6 @@
 
 .video__player {
     width: 46.063rem;
-    height: 26rem;
     border-radius: 1.875rem;
     margin-right: 9.313rem;
 }
@@ -72,12 +69,15 @@
     justify-content: flex-start;
     gap: 6.75rem;
     padding-top: 3.5rem;
+    transition: all 0.3s ease-in-out;
 }
 
 .video__content {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    gap : 7.313rem;
+    transition: all 0.3s ease-in-out;
 }
 
 .content-title-wrap {
@@ -85,7 +85,7 @@
 }
 
 .video__content-title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: left;
     color: #00A695;
@@ -97,10 +97,10 @@
 .video__content-description {
     font-size: 1.25rem;
     font-weight: 300;
-    text-align: justify;
+    text-align: left;
     color: #000000;
     line-height: 1.6;
-    margin-left: 7.313rem;
+    
 }
 
 .keyword {
