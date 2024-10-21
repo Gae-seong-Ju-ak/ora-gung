@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 더 단순화된 버전 */
+html {
+    font-size: 8px;
+    scroll-behavior: smooth;
+}
+
+/* 태블릿 & 작은 데스크탑 */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+/* 데스크탑 */
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* 대형 디스플레이 */
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.l-content {
+    width: calc(100% - 10%);
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 6.25rem;
+    background: #ffffff;
+    height: 1000vh;
+}
+
