@@ -1,12 +1,12 @@
-.background {
+.background_wrapper {
     text-align: center;
 }
 
-.bgstitle {
+.background_section_title {
     margin-top: 1rem;
 }
 
-.bgstitle .circle {
+.background_section_title .background_circle {
     width: .5rem;
     height: .5rem;
     background-color: #00A695;
@@ -15,33 +15,33 @@
     margin-bottom: .5rem;
 }
 
-.bgstitle>h2 {
+.background_section_title>h2 {
     margin: 0;
     font-size: 1.5rem;
     color: #121212;
 }
 
-.bgcontent {
+.background_contents_wrap {
     margin-top: 2rem;
 }
 
-.bgcontent .bgtit>h3 {
+.background_contents_wrap .background_title>h3 {
     margin: 0;
     font-size: 3rem;
     color: #121212;
 }
 
-.bgcontent .bgtit>h3 span {
+.background_contents_wrap .background_title>h3 span {
     color: #00A695;
 }
 
-.bgtxt {
+.background_description {
     margin-top: 2rem;
     font-size: 1rem;
     line-height: 2rem;
 }
 
-.line {
+.background_line {
     animation: moveLine 2s linear infinite;
 }
 
@@ -59,7 +59,7 @@
     }
 }
 
-.bgcontent2 {
+.app_introduce {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -70,7 +70,7 @@
 
 }
 
-.bgq {
+.app_question {
     margin-top: 7rem;
     width: 40rem;
     height: 4rem;
@@ -79,29 +79,29 @@
     border-radius: 5rem 5rem 5rem 5rem;
 }
 
-.bgq>h2 {
+.app_question>h2 {
     font-size: 1rem;
-    line-height: 2.5rem;
+    line-height: 4rem;
     font-weight: 400;
 }
 
-.bgq>h2>span {
+.app_question>h2>span {
     color: #00A695;
     font-weight: 800;
 }
 
-.bgapp {
+.app_introduce_description {
     margin-top: 5rem;
 }
 
-.bgapp p {
+.app_introduce_description p {
     color: #F6F6F6;
     margin-top: 5rem;
     line-height: 2rem;
     font-weight: 400;
 }
 
-.line2 {
+.app_line {
     position: absolute;
     width: 100%;
     left: 0;
