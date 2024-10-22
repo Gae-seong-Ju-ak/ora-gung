@@ -1,12 +1,18 @@
-.background_wrapper {
+.background {
+    padding-top: 14.813rem;
+    text-align: center;
+    position: relative;
+}
+
+.background__wrapper {
     text-align: center;
 }
 
-.background_section_title {
+.background__section-title {
     margin-top: 1rem;
 }
 
-.background_section_title .background_circle {
+.background__circle {
     width: .5rem;
     height: .5rem;
     background-color: #00A695;
@@ -15,33 +21,25 @@
     margin-bottom: .5rem;
 }
 
-.background_section_title>h2 {
-    margin: 0;
+.background__subtitle {
     font-size: 1.5rem;
     color: #121212;
+    font-weight: 600;
 }
 
-.background_contents_wrap {
-    margin-top: 2rem;
-}
-
-.background_contents_wrap .background_title>h3 {
-    margin: 0;
-    font-size: 3rem;
+.background__title {
+    margin-top: 2.25rem;
+    font-size: 3.125rem;
     color: #121212;
 }
 
-.background_contents_wrap .background_title>h3 span {
-    color: #00A695;
-}
-
-.background_description {
+.background__description {
     margin-top: 2rem;
     font-size: 1rem;
     line-height: 2rem;
 }
 
-.background_line {
+.background__line {
     animation: moveLine 2s linear infinite;
 }
 
@@ -59,42 +57,52 @@
     }
 }
 
-.app_introduce {
-    position: relative;
-    display: inline-block;
+.introduce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 42rem;
     background-color: #00A695;
     border-radius: 3rem;
-    z-index: 2;
-
+    z-index: 1;
 }
 
-.app_question {
-    margin-top: 7rem;
+.introduce__question {
     width: 40rem;
     height: 4rem;
     background-color: #F6F6F6;
-    display: inline-block;
     border-radius: 5rem 5rem 5rem 5rem;
 }
 
-.app_question>h2 {
+.introduce__question-title {
     font-size: 1rem;
     line-height: 4rem;
     font-weight: 400;
 }
 
-.app_question>h2>span {
+
+.introduce__question-title--highlight {
     color: #00A695;
     font-weight: 800;
 }
 
-.app_introduce_description {
-    margin-top: 5rem;
+.introduce__logo {
+    width: 21.25rem;
+    margin-top: 4.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.app_introduce_description p {
+.introduce__logo-img {
+    width: 100%;
+    height: auto;
+}
+
+.introduce__description {
+    margin-top: 5rem;
     color: #F6F6F6;
     margin-top: 5rem;
     line-height: 2rem;
@@ -103,8 +111,8 @@
 
 .app_line {
     position: absolute;
-    width: 100%;
+    top: 34%;
     left: 0;
-    top: 5rem;
-    z-index: -1;
+    width: 100%;
+    z-index: 0;
 }
