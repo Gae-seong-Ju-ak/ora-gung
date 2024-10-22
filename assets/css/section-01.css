@@ -21,6 +21,7 @@
     font-weight: 600;
     letter-spacing: -1%;
     text-align: left;
+    margin: 0;
 }
 
 .section__image {
@@ -138,4 +139,9 @@
     font-size: 1.875rem;
     font-weight: 800;
     color: #F3F1F1;
+}
+
+.keyword__item:last-child .keyword__text {
+    color: #121212;
+    opacity: 0.8;
 }
