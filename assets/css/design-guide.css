@@ -52,10 +52,13 @@ hr{
     font-size: 1.75rem;
 }
 
-.typography__guide ul li p span{
+.typography__guide ul li p{
     font-size: 1.5rem;
 }
 
+.typography__guide ul li span{
+    font-size: 1.5rem;
+}
 
 .typography__guide ul li div{
     display: flex;
