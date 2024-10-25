@@ -7,7 +7,8 @@
     left: 0;
     right: 0;
     height: 4.375rem;
-    padding: 2.5rem 5%;
+    padding: 0 7.5%;
+    margin-top: 2.5rem;
     transition: all 0.3s ease-in-out;
     z-index: 5;
 }
