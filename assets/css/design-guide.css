@@ -129,7 +129,7 @@ hr {
     display: flex;
     overflow: hidden;
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    margin-left: calc(-50vw + 50% - 8px);
 }
 
 .icon__rolling-wrap .icon__rolling-list ul {
