@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="./assets/css/section-02.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
 
 
@@ -164,9 +165,9 @@
                             </h2>
                         </div>
                         <div class="introduce__logo">
-                            <img src="./assets/images/logo-combi.webp" alt="" class="introduce__logo-img">
+                            <img src="./assets/images/logo-combi.webp" alt="로고" class="introduce__logo-img">
                         </div>
-                        
+
                         <p class="introduce__description">
                             외국인 관광객에게 적합한 개인화된 코스로 번거로움 없이 사용자가 직접 ‘역사 속 인물’이라는 1인칭 시점으로 AR을<br />
                             통해 한국 궁궐을 능동적으로 탐방할 수 있도록 설계되어 4대 궁궐에 특화된 투어 앱 ‘오라, 궁’은 외국인 관광객이<br />
@@ -175,12 +176,26 @@
                         <svg viewBox="0 0 1620 665" xmlns="http://www.w3.org/2000/svg" class="app_line">
                             <defs>
                                 <style>
-                                    .cls-1 {mask: url(#mask);}
-                                    .cls-2 {fill-rule: evenodd;}
+                                    .cls-1 {
+                                        mask: url(#mask);
+                                    }
+
+                                    .cls-2 {
+                                        fill-rule: evenodd;
+                                    }
+
                                     .cls-2,
-                                    .cls-3 {fill: #fff;}
-                                    .cls-4 {opacity: .1;}
-                                    .cls-5 {fill: #e6f3e7;}
+                                    .cls-3 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-4 {
+                                        opacity: .1;
+                                    }
+
+                                    .cls-5 {
+                                        fill: #e6f3e7;
+                                    }
                                 </style>
                                 <mask id="mask" x="-831.36798" y="-345.349" width="4089.56793" height="978.06702"
                                     maskUnits="userSpaceOnUse">
@@ -204,7 +219,73 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="footer">
+            <div class="footer__container">
+                <!-- 왼쪽 섹션 -->
+                <div class="footer__brand">
+                    <img src="./assets/images/logo-combi.webp" alt="오라 궁 로고" class="footer__logo">
+                    <p class="footer__brand-text">한국 궁궐의 문을 열다</p>
+                    <p class="footer__brand-subtext">Department of Digital Media Design, Kaywon University of Art and
+                        Design</p>
+                    <!-- 다운로드 버튼 및 아이콘 -->
+                    <a href="./assets/pdf/ora-gung_proposal.pdf" target="_blank" class="footer__button">기획서 전문 다운로드</a>
+
+                    <div class="footer__icon-wrapper">
+                        <a href="#" class="footer__icon-link" target="_blank"><img src="./assets/images/figma_logo.svg"
+                                alt="Figma Icon" class="footer__icon"></a>
+                        <a href="https://github.com/Gae-seong-Ju-ak/ora-gung" class="footer__icon-link"
+                            target="_blank"><img src="./assets/images/github_logo.svg" alt="Apple Icon"
+                                class="footer__icon"></a>
+                    </div>
+                    <!-- 저작권 -->
+                    <p class="footer__copyright">© 2024. Gae-seong-Ju-ak All rights reserved.</p>
+                </div>
+
+                <!-- 오른쪽 섹션 (TEAM. 개성주악) -->
+                <div class="footer__team">
+                    <h2 class="footer__team-title">TEAM. 개성주악</h2>
+                    <div class="footer_member-container">
+                        <div class="footer__role">
+                            <h3 class="footer__role-title">Planner</h3>
+                            <p class="footer__member">
+                                <span class="footer__member-name">전진희</span><br>
+                                <span class="footer__member-email">example@example.com</span>
+                            </p>
+                            <p class="footer__member">
+                                <span class="footer__member-name">여정연</span><br>
+                                <span class="footer__member-email">example@example.com</span>
+                            </p>
+                        </div>
+
+                        <div class="footer__role">
+                            <h3 class="footer__role-title">Designer</h3>
+                            <p class="footer__member">
+                                <span class="footer__member-name">조윤슬</span><br>
+                                <span class="footer__member-email">example@example.com</span>
+                            </p>
+                            <p class="footer__member">
+                                <span class="footer__member-name">신태연</span><br>
+                                <span class="footer__member-email">example@example.com</span>
+                            </p>
+                        </div>
+
+                        <div class="footer__role">
+                            <h3 class="footer__role-title">Developer</h3>
+                            <p class="footer__member">
+                                <span class="footer__member-name">노현수</span><br>
+                                <span class="footer__member-email">kevinsoo1014@gmail.com</span>
+                            </p>
+                            <p class="footer__member">
+                                <span class="footer__member-name">한현주</span><br>
+                                <span class="footer__member-email">example@example.com</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
         </footer>
     </div>
 
