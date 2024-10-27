@@ -11,7 +11,7 @@ let lastScrollTop = 0;
 const delta = 3;
 
 // DOM 요소 선택
-const header = document.querySelector('.header');
+const header = document.querySelector('header');
 
 // 헤더의 실제 높이를 픽셀 단위로 저장
 const navbarHeight = header.offsetHeight;
