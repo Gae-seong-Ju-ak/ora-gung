@@ -1,9 +1,10 @@
 footer {
     width: 100%;
-    height: 27.688rem;
+    /* height: 27.688rem; */
+    height: auto;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0 6.25rem;
+    padding: 3.5rem;
     background-color: var(--tealGreen);
     border-radius: 3.125rem 3.125rem 0 0;
     display: flex;
@@ -144,4 +145,53 @@ footer {
 
 .footer__member-name {
     margin-bottom: 0.313rem;
+}
+
+@media screen and (max-width: 415px) {
+    .footer__member-wrap {
+        gap: 2.125rem;
+    }
+
+    .footer__role {
+        padding-right: 1.063rem;
+    }
+
+    .footer__role-title {
+        font-size: 1.063rem;
+        margin-bottom: 1.594rem;
+    }
+
+    .footer__member {
+        font-size: 0.85rem;
+        margin-bottom: 1.594rem;
+    }
+
+    .footer__member-name {
+        margin-bottom: 0.266rem;
+    }
+
+    .footer__brand-text {
+        font-size: 1.063rem;
+        margin-bottom: 1.063rem;
+    }
+
+    .footer__brand-subtext {
+        font-size: 0.638rem;
+        margin-bottom: 2.125rem;
+    }
+
+    .footer__button {
+        padding: 0.531rem 0.656rem;
+        font-size: 0.738rem;
+        margin-bottom: 1.063rem;
+    }
+
+    .footer__icon-wrapper {
+        margin-bottom: 2.125rem;
+    }
+
+    .footer__icon-link {
+        width: 2.078rem;
+        height: 2.078rem;
+    }
 }
