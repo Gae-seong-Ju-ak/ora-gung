@@ -17,7 +17,7 @@ header {
     top: calc(-4.375rem - 2.5rem);
 }
 
-.header__container {
+.header__wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,7 +49,7 @@ header {
     justify-content: center;
     height: 3rem;
     border-radius: 1.875rem;
-    background: #F3F1F1;
+    background: var(--white-bg);
     box-shadow: 2px 2px 8.2px 0px rgba(0, 0, 0, 0.1);
     padding: 1.25rem 6.25rem;
 }
@@ -67,7 +67,7 @@ header {
     font-weight: 400;
     padding: 0.3rem 0.5rem;
     cursor: pointer;
-    color: #000000;
+    color: var(--black);
     transition: all 0.2s ease-in-out;
 }
 

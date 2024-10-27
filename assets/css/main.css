@@ -1,3 +1,15 @@
+:root {
+    --tealGreen: #00A695;
+    --tealGreenD: #008773;
+    --coralRed: #E16350;
+    --coralRedD: #cc5245;
+    --ivory: #E7E6D2;
+    --black: #121212;
+    --white-txt: #FDFCFC;
+    --white-bg: #F5F5F5;
+
+}
+
 *,
 *::before,
 *::after {
@@ -14,9 +26,69 @@ html {
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    background-color: #F3F1F1;
+    background-color: var(--white-bg);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+
+.top-button {
+    position: fixed;
+    bottom: 1.563rem;
+    right: 1.563rem;
+    width: 4.688rem;
+    height: 4.688rem;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--coralRed);
+    color: var(--white-txt);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    display: none; /* 스크롤 시 표시 */
+    z-index: 10;
+    text-align: center;
+    line-height: 4.688rem;
+}
+
+.top-button:hover {
+    background-color: var(--coralRedD); /* 버튼 호버 시 색상 */
+}
 /* 스크롤바 스타일 설정인데, 애들한테 물어보고 적용 할지 말지 결정해야 함 
 // 스크롤바 전체 스타일 설정
 ::-webkit-scrollbar {
@@ -25,7 +97,7 @@ body {
 
 // 스크롤바의 트랙 설정
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--white-bg);
 }
 
 // 스크롤바의 핸들 설정
@@ -40,23 +112,11 @@ body {
     background-color: #008773;
 } */
 
-
-
 .wrapper {
     width: 100%;
     max-width: 1920px;
     padding: 0 7.5%;
-    margin: 0 auto;
-    background-color: #F3F1F1;
-}
-
-/* 기본 레이아웃 설정 */
-.video__content {
-    flex-direction: column;
-}
-
-.video__content-wrapper {
-    flex-direction: row;
+    background-color: var(--white-bg);
 }
 
 /* 미디어 쿼리 */

@@ -4,7 +4,7 @@ footer {
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 6.25rem;
-    background-color: #00A695;
+    background-color: var(--tealGreen);
     border-radius: 3.125rem 3.125rem 0 0;
     display: flex;
     justify-content: space-between;
@@ -12,13 +12,13 @@ footer {
     align-items: center;
 }
 
-.footer__container {
+.footer__wrap {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    color: #fff;
+    color: var(--white-txt);
 }
 
 /* 브랜드 로고 및 설명 */
@@ -53,8 +53,8 @@ footer {
     padding: 0.625rem 0.75rem;
     font-size: 0.875rem;
     font-weight: 500;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--white-bg);
+    color: var(--black);
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -106,7 +106,7 @@ footer {
     font-weight: 700;
 
 }
-.footer_member-container {
+.footer__member-wrap {
     display: flex;
     flex-wrap: wrap;
     gap: 4.375rem;
@@ -122,7 +122,7 @@ footer {
     margin-top: 2.5rem;
     width: max-content;
     padding-right: 2.5rem;
-    border-right: 1px solid #fff;
+    border-right: 1px solid var(--white-bg);
 }
 
 .footer__role:last-child {

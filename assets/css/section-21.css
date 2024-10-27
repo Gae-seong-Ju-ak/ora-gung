@@ -1,0 +1,73 @@
+
+.sec-21__title {
+    color: var(--tealGreen) !important;
+    margin-bottom: 10.313rem !important;
+}
+
+.sec-21__wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.75rem;
+}
+
+.sec-21__feature-left,
+.sec-21__feature-right {
+    flex: 1;
+    max-width: calc(50% - 1.375rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.125rem;
+    padding-top: 7.938rem;
+    color: var(--white-txt);
+    overflow: hidden;
+}
+
+.sec-21__feature-left {
+    background-color: var(--coralRed);
+}
+
+.sec-21__feature-right {
+    background-color: var(--tealGreen);
+}
+
+.sec-21__feature-description {
+    font-size: 1.313rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.813rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.469rem;
+}
+
+.sec-21__feature-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: -1%;
+    margin-bottom: 3.75rem;
+}
+
+.sec-21__feature-image {
+    width: 25.125rem;
+    height: auto;
+    opacity: 0;
+    transform: translateY(2.5rem); /* 아래에서 위로 올라오는 효과 */
+    transition: opacity 1s ease, transform 1s ease; /* 트랜지션 설정 */
+}
+
+/* fade-in 클래스가 추가되면 나타나도록 설정 */
+.sec-21__feature-image.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* 제자리 위치 */
+}
+
+.sec-21__feature-icon {
+    width: 1.25rem;
+}

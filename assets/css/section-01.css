@@ -1,22 +1,31 @@
+/* Section */
 section {
     width: 100%;
     margin-bottom: 18.75rem;
 }
 
-.section__description {
+.section__title {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: 600;
+    letter-spacing: -1%;
+}
+
+
+.sec-01__description {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 1.15rem;
 }
 
-.section__header {
+.sec-01__header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     margin-bottom: 7.5rem;
 }
 
-.section__title {
+.sec-01__title {
     font-size: 3.75rem;
     font-weight: 600;
     letter-spacing: -1%;
@@ -24,11 +33,12 @@ section {
     margin: 0;
 }
 
-.section__image {
+.sec-01__image {
     width: 7.75rem;
     margin-left: 1.875rem;
 }
 
+/* Overview */
 .overview {
     display: flex;
     justify-content: flex-start;
@@ -40,15 +50,16 @@ section {
 .overview__title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #00A695;
+    color: var(--tealGreen);
 }
 
 .overview__description {
     font-size: 1.25rem;
     font-weight: 300;
-    color: #000000;
+    color: var(--black);
 }
 
+/* Video */
 .video {
     width: 100%;
     display: flex;
@@ -65,7 +76,7 @@ section {
 
 .video__content-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 6.75rem;
@@ -75,9 +86,10 @@ section {
 
 .video__content {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap : 7.313rem;
+    gap: 7.313rem;
     transition: all 0.3s ease-in-out;
 }
 
@@ -89,7 +101,7 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: left;
-    color: #00A695;
+    color: var(--tealGreen);
     display: inline-block;
     width: 11.5rem;
     white-space: nowrap;
@@ -99,11 +111,11 @@ section {
     font-size: 1.25rem;
     font-weight: 300;
     text-align: left;
-    color: #000000;
+    color: var(--black);
     line-height: 1.6;
-    
 }
 
+/* Keywords */
 .keyword {
     display: flex;
     justify-content: center;
@@ -116,11 +128,12 @@ section {
     justify-content: center;
     width: 25.313rem;
     height: 11.688rem;
+    padding: 1rem 2rem;
     border-radius: 10000rem;
 }
 
 .keyword__item:nth-child(1) {
-    background: #00A695;
+    background: var(--tealGreen);
 }
 
 .keyword__item:nth-child(2) {
@@ -128,17 +141,17 @@ section {
 }
 
 .keyword__item:nth-child(3) {
-    background: #E16350;
+    background: var(--coralRed);
 }
 
 .keyword__item:nth-child(4) {
-    background: #E7E6D2;
+    background: var(--ivory);
 }
 
 .keyword__text {
     font-size: 1.875rem;
     font-weight: 800;
-    color: #F3F1F1;
+    color: var(--white-txt);
 }
 
 .keyword__item:last-child .keyword__text {
