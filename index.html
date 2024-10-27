@@ -10,30 +10,32 @@
     <title>오라, 궁</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="#" type="image/x-icon"> <!-- favicon ico -->
-    <!-- 파일명 <favicon.ico>, 16x16 or 32x32 -->
-    <link rel="icon" href="" type="image/png"> <!-- favicon png -->
-    <!-- 파일명 <favicon.png>, 16x16 or 32x32 -->
-    <link rel="apple-touch-icon" href="#"> <!-- apple-touch-icon -->
-    <!-- 파일명 <apple-touch-icon.png>, 180x180 -->
-    <link rel="icon" href="#" sizes="32x32" type="image/png"> <!-- 파일명 <favicon-32x32, 고해상도 파비콘, 32x32 -->
-    <link rel="icon" href="#" sizes="192x192" type="image/png"> <!-- 파일명 <favicon-192x192, 고해상도 파비콘, 192x192 -->
-    <!-- 파비콘 파일명 및 사이즈 명시, 추후 파비콘 파일 링크 추가하고 본 주석문 및 위 link 주석문 삭제 -->
+    <link rel="icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon"> <!-- 기본 favicon.ico -->
+    <link rel="icon" href="./assets/images/favicon/favicon-32x32.ico" type="image/x-icon"> <!-- favicon 32x32 ico -->
+    <link rel="icon" href="./assets/images/favicon/favicon-32x32.png" type="image/png"> <!-- favicon 32x32 png -->
+    <link rel="apple-touch-icon" href="./assets/images/favicon/apple-touch-icon.png"> <!-- apple-touch-icon -->
+    <link rel="icon" href="./assets/images/favicon/favicon-192x192.png" sizes="192x192" type="image/png">
+    <!-- favicon png 192x192 -->
 
     <!-- Preload critical assets -->
     <!-- 프리텐다드 다이나믹 서브셋 웹폰트 -->
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
-    <link rel="preload" href="#" as="style">
+    <link rel="preload" as="style"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+        crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+    </noscript>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/section-01.css">
-    <link rel="stylesheet" href="./assets/css/section-02.css">
-    <link rel="stylesheet" href="./assets/css/design-guide.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/section.css">
+    <link rel="stylesheet" href="./assets/css/section-01.css">
+    <link rel="stylesheet" href="./assets/css/section-02.css">
+    <link rel="stylesheet" href="./assets/css/section-21.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
 
@@ -46,15 +48,16 @@
 </head>
 
 <body>
-    <div class="l-content">
-        <header class="header">
-            <div class="header__container">
+    <div class="wrapper"> <!-- wrapper -->
+        <header>
+            <!-- header -->
+            <div class="header__wrap">
                 <div class="header__brand">
                     <a href="#" class="header__logo-link">
                         <img src="./assets/images/logo-symbol.webp" alt="오라, 궁 홈페이지" class="header__logo">
                     </a>
                 </div>
-                <nav class="nav" role="navigation" aria-label="메인 메뉴">
+                <nav class="nav" aria-label="네비게이션">
                     <ul class="nav__list">
                         <li class="nav__item">
                             <a href="#" class="nav__link nav__link--active">콘텐츠1</a>
@@ -71,21 +74,24 @@
                     </ul>
                 </nav>
             </div>
-        </header>
+        </header> <!-- header end -->
 
         <main>
-            <section class="section" id="intro">
+            <button class="top-button">Top</button>
+            <section id="intro">
+                <!-- intro -->
                 <div style="width: 100%; height: 60rem; display: flex; align-items: center; justify-content: center;">
                     <h1>메인 콘텐츠 구상 중...</h1>
                 </div>
-            </section>
+            </section> <!-- intro  end -->
 
-            <section class="section" id="sec-01">
+            <section id="sec-01">
+                <!-- sec-01 -->
                 <div class="fixed-bg"></div>
-                <p class="section__description">원포인트로 즐기는 4대궁 투어</p>
-                <div class="section__header">
-                    <h1 class="section__title">한국 궁궐의 문을 열다</h1>
-                    <img class="section__image" src="./assets/images/logo-symbol.webp" alt="로고">
+                <p class="sec-01__description">원포인트로 즐기는 4대궁 투어</p>
+                <div class="sec-01__header">
+                    <h1 class="sec-01__title">한국 궁궐의 문을 열다</h1>
+                    <img class="sec-01__image" src="./assets/images/logo-symbol.webp" alt="로고">
                 </div>
 
                 <div class="overview">
@@ -134,10 +140,11 @@
                         <p class="keyword__text">#몰입감 있는 AR 미션</p>
                     </div>
                 </div>
-            </section>
+            </section> <!-- sec-01 end -->
 
 
-            <section class="section" id="sec-02">
+            <section id="sec-02">
+                <!-- sec-02 -->
 
                 <div class="background">
                     <div class="background__circle"></div>
@@ -155,8 +162,8 @@
                     </p>
 
                     <svg class="background__line">
-                        <line width="1" height="60" x1="150" y1="30" x2="150" y2="100" stroke="#00A695"
-                            stroke-width="1" />
+                        <line x1="150" y1="30" x2="150" y2="100" stroke="#00A695"
+                            stroke-width="2" />
                     </svg>
 
                     <div class="introduce">
@@ -171,8 +178,8 @@
                         </div>
 
                         <p class="introduce__description">
-                            외국인 관광객에게 적합한 개인화된 코스로 번거로움 없이 사용자가 직접 ‘역사 속 인물’이라는 1인칭 시점으로 AR을<br />
-                            통해 한국 궁궐을 능동적으로 탐방할 수 있도록 설계되어 4대 궁궐에 특화된 투어 앱 ‘오라, 궁’은 외국인 관광객이<br />
+                            외국인 관광객에게 적합한 개인화된 코스로 번거로움 없이 사용자가 직접 ‘역사 속 인물’이라는 1인칭 시점으로 AR을<br>
+                            통해 한국 궁궐을 능동적으로 탐방할 수 있도록 설계되어 4대 궁궐에 특화된 투어 앱 ‘오라, 궁’은 외국인 관광객이<br>
                             한정된 여행 일정 속에서도 4대 궁궐에 집중된 깊이 있는 투어를 즐길 수 있도록 합니다.
                         </p>
                         <svg viewBox="0 0 1620 665" xmlns="http://www.w3.org/2000/svg" class="app_line">
@@ -218,178 +225,198 @@
                         </svg>
                     </div>
                 </div>
-            </section>
+            </section> <!-- sec-02 end -->
 
 
-            <section class="section" id="sec-design-guide">
-                <div class="design__guide-wrap">
-                    <p class="design__guide-subtitle">DESIGN GUIDE</p>
+            <section id="sec-design-guide">
+                <h2 class="section__title">DESIGN GUIDE</h2>
 
-                    <h1 class="typography__subtitle">TYPOGRAPHY</h1>
-                    <p class="typography__title">Pretendard</p>
+                <p class="typography__subtitle">TYPOGRAPHY</p>
+                <p class="typography__title">Pretendard</p>
 
-                    <div class="typography__guide">
-                        <ul class="typography__guide-font">
-                            <li>
-                                <p>Title</p>
-                                <div>
-                                    <p>thin?</p><span>??px</span>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Headline</p>
-                                <div>
-                                    <p>thin?</p><span>??px</span>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Special case</p>
-                                <div>
-                                    <p>thin?</p><span>??px</span>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Body</p>
-                                <div>
-                                    <p>thin?</p><span>??px</span>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <hr />
-
-                        <ul class="typography__font">
-                            <li>
-                                <p>
-                                    한국 궁궐의<br>
-                                    문을 열다
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    한국 궁궐의<br>
-                                    문을 열다
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    한국 궁궐의<br>
-                                    문을 열다
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    한국 궁궐의<br>
-                                    문을 열다
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="brandcolor">
-                        <p class="brandcolor__title">DESIGN GUIDE</p>
-
-                        <div class="brandcolor__color">
-                            <ul>
-                                <li>
-                                    <div class="color__red"></div>
-                                    <span>
-                                        #E16350 <br>
-                                        RGB (225, 99, 80)
-                                    </span>
-                                </li>
-                                <li>
-                                    <div class="color__green"></div>
-                                    <span>
-                                        #00A695 <br>
-                                        RGB (0, 166, 149)
-                                    </span>
-                                </li>
-                                <li>
-                                    <div class="color__yellow"></div>
-                                    <span>
-                                        #E7E6D2 <br>
-                                        RGB (231, 230, 210)
-                                    </span>
-                                </li>
-                            </ul>
+                <div class="typography__guide">
+                    <div class="typography__guide-font">
+                        <div class="typography__guide-item">
+                            <p>Title</p>
+                            <div>
+                                <p>thin?</p><span>??px</span>
+                            </div>
+                        </div>
+                        <div class="typography__guide-item">
+                            <p>Headline</p>
+                            <div>
+                                <p>thin?</p><span>??px</span>
+                            </div>
+                        </div>
+                        <div class="typography__guide-item">
+                            <p>Special case</p>
+                            <div>
+                                <p>thin?</p><span>??px</span>
+                            </div>
+                        </div>
+                        <div class="typography__guide-item">
+                            <p>Body</p>
+                            <div>
+                                <p>thin?</p><span>??px</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="icon__rolling-wrap">
-                        <div class="icon__rolling-list">
-                            <ul>
-                                <li>
-                                    <img src="./assets/images/AR_2.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/AR.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/bell.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/camera.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/comments.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/coupon.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/gift.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/down-arrow.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/hanbok.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/location-dot.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/location-pin.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/profile.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/question_mark.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/reservation.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/review.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/search.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/shopping-basket.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/stamp.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/star.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/Union.svg" alt="앱아이콘" class="icon__wrap">
-                                </li>
-                            </ul>
+                    <hr class="h-line">
+
+                    <div class="typography__font">
+                        <div class="typography__font-item">
+                            <p>한국 궁궐의<br>문을 열다</p>
+                        </div>
+                        <div class="typography__font-item">
+                            <p>한국 궁궐의<br>문을 열다</p>
+                        </div>
+                        <div class="typography__font-item">
+                            <p>한국 궁궐의<br>문을 열다</p>
+                        </div>
+                        <div class="typography__font-item">
+                            <p>한국 궁궐의<br>문을 열다</p>
                         </div>
                     </div>
                 </div>
-            </section> <!-- #sec-design-guide finish -->
 
-            <section class="section"></section>
+                <div class="brandcolor">
+                    <p class="brandcolor__title">DESIGN GUIDE</p>
+
+                    <div class="brandcolor__color">
+                        <div class="brandcolor__color-item">
+                            <div style="background-color: var(--coralRed);"></div>
+                            <span>#E16350 <br>RGB (225, 99, 80)</span>
+                        </div>
+                        <div class="brandcolor__color-item">
+                            <div style="background-color: var(--tealGreen);"></div>
+                            <span>#00A695 <br>RGB (0, 166, 149)</span>
+                        </div>
+                        <div class="brandcolor__color-item">
+                            <div style="background-color: var(--ivory);"></div>
+                            <span>#E7E6D2 <br>RGB (231, 230, 210)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="icon__rolling-wrap">
+                    <div class="icon__rolling-list">
+                        <div class="icon__item">
+                            <img src="./assets/images/AR_2.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/AR.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/bell.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/camera.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/comments.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/coupon.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/gift.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/down-arrow.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/hanbok.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/location-dot.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/location-pin.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/profile.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/question_mark.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/reservation.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/review.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/search.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/shopping-basket.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/stamp.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/star.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                        <div class="icon__item">
+                            <img src="./assets/images/Union.svg" alt="앱아이콘" class="icon__wrap">
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- sec-design-guide end -->
+
+            <section id="sec-on-boarding">
+                <div class="section-bg_opacity"></div>
+                <h2 class="section__title" style="padding-top: 16rem;" >Onboarding</h2>
+                <p class="on-boarding__intro"><span style="color: var(--tealGreen);">‘오라, 궁’</span>과 함께<br>한국 궁궐의 문을 열어 보세요.</p>
+
+                <div class="carousel-wrap">
+                    <div class="carousel-container">
+                        <div class="carousel"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-stamp">
+                <h2 class="section__title stamp__title">Stamp Design</h2>
+                
+                <div class="stamp__wrap">
+                    <div class="stamp__item"></div>
+                    <div class="stamp__item"></div>
+                    <div class="stamp__item"></div>
+                    <div class="stamp__item"></div>
+                </div>
+            </section>
+
+            <!-- 섹션 21이라고 이름 붙이긴 했는데, 바뀌면 나중에 수정 한복 섹션임 class명도 딸깍 수정 하면 됨 -->
+            <section id="sec-21"> <!-- sec-21 -->
+                <h2 class="section__title sec-21__title">Hanbok page</h2>
+                <div class="sec-21__wrap">
+                    <div class="sec-21__feature-left">
+                        <p class="sec-21__feature-description">
+                            <img src="./assets/images/hanbok_white.svg" alt="한복 아이콘" class="sec-21__feature-icon">
+                            Filtering
+                        </p>
+                        <h2 class="sec-21__feature-title">외국인 맞춤형 필터로<br>
+                            당신만의 한복을 찾아보세요!</h2>
+                        <img src="./assets/images/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-21__feature-image">
+                    </div>
+                    <div class="sec-21__feature-right">
+                        <p class="sec-21__feature-description">
+                            <img src="./assets/images/hanbok_white.svg" alt="한복 아이콘" class="sec-21__feature-icon">
+                            Flow
+                        </p>
+                        <h2 class="sec-21__feature-title">당의와 다양한 한류 중심의<br>
+                            한복 매거진까지!</h2>
+                            <img src="./assets/images/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-21__feature-image">
+                    </div>
+                </div>
+            </section> <!-- sec-21 end -->
         </main>
 
-        <footer class="footer">
-            <div class="footer__container">
+        <footer>
+            <!-- footer -->
+            <div class="footer__wrap">
                 <!-- 왼쪽 섹션 -->
                 <div class="footer__brand">
                     <img src="./assets/images/logo-combi.webp" alt="오라 궁 로고" class="footer__logo">
@@ -413,28 +440,28 @@
                 <!-- 오른쪽 섹션 (TEAM. 개성주악) -->
                 <div class="footer__team">
                     <h2 class="footer__team-title">TEAM. 개성주악</h2>
-                    <div class="footer_member-container">
+                    <div class="footer__member-wrap">
                         <div class="footer__role">
                             <h3 class="footer__role-title">Planner</h3>
                             <p class="footer__member">
                                 <span class="footer__member-name">전진희</span><br>
-                                <span class="footer__member-email">example@example.com</span>
+                                <a href="mailto:example@example.com">example@example.com</a>
                             </p>
                             <p class="footer__member">
                                 <span class="footer__member-name">여정연</span><br>
-                                <span class="footer__member-email">example@example.com</span>
+                                <a href="mailto:example@example.com">example@example.com</a>
                             </p>
                         </div>
 
                         <div class="footer__role">
                             <h3 class="footer__role-title">Designer</h3>
                             <p class="footer__member">
-                                <span class="footer__member-name">조윤슬</span><br>
-                                <span class="footer__member-email">example@example.com</span>
+                                <span class="footer__member-name">조윤솔</span><br>
+                                <a href="mailto:example@example.com">example@example.com</a>
                             </p>
                             <p class="footer__member">
                                 <span class="footer__member-name">신태연</span><br>
-                                <span class="footer__member-email">example@example.com</span>
+                                <a href="mailto:example@example.com">example@example.com</a>
                             </p>
                         </div>
 
@@ -442,11 +469,11 @@
                             <h3 class="footer__role-title">Developer</h3>
                             <p class="footer__member">
                                 <span class="footer__member-name">노현수</span><br>
-                                <span class="footer__member-email">kevinsoo1014@gmail.com</span>
+                                <a href="mailto:kevinsoo1014@gmail.com">kevinsoo1014@gmail.com</a>
                             </p>
                             <p class="footer__member">
-                                <span class="footer__member-name">한현주</span><br>
-                                <span class="footer__member-email">example@example.com</span>
+                                <span>한현주</span><br>
+                                <a href="mailto:example@example.com">example@example.com</a>
                             </p>
                         </div>
                     </div>
@@ -455,12 +482,16 @@
 
             </div>
 
-        </footer>
-    </div>
+        </footer> <!-- footer end -->
+    </div> <!-- wrapper end -->
 
+    <script src="./assets/scripts/main.js"></script>
     <script src="./assets/scripts/header.js"></script>
     <script src="./assets/scripts/design-guide.js"></script>
+    <script src="./assets/scripts/on-boarding.js"></script>
+    <script src="./assets/scripts/stamp.js"></script>
     <script src="./assets/scripts/footer.js"></script>
+    <script src="./assets/scripts/hanbok.js"></script>
 </body>
 
 </html>
