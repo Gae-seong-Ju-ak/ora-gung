@@ -6,7 +6,7 @@ const images = [
     ["./assets/images/source/stamp_4a.webp", "./assets/images/source/stamp_4b.webp", "./assets/images/source/stamp_4c.webp", "./assets/images/source/stamp_4d.webp"]
 ];
 
-const stampItems = document.querySelectorAll('.stamp__item');
+const stampItems = document.querySelectorAll('.section-16__item');
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -22,34 +22,19 @@ stampItems.forEach((item, index) => {
 });
 
 const observerCallback = (entries) => {
-    // 관찰된 항목들의 가시성 상태 업데이트
     entries.forEach(entry => {
         visibilityMap.set(entry.target, entry.isIntersecting);
 
-        // 각 항목의 가시성 상태 출력
         const itemIndex = Array.from(stampItems).indexOf(entry.target);
         console.log(`Stamp ${itemIndex + 1}: ${entry.isIntersecting ? 'visible' : 'not visible'}`);
     });
 
-    // 현재 모든 항목의 가시성 상태를 배열로 변환하여 출력
     const visibilityArray = Array.from(visibilityMap.values());
-    console.log('Current visibility status:', visibilityArray);
-
-    // 모든 항목이 보이는지 확인
     const allVisible = visibilityArray.every(isVisible => isVisible);
-    console.log('All items visible:', allVisible);
-
-    // 전환 함수 상태 출력
-    console.log('Transition function running:', intervalId !== null);
-
-    // 구분선 추가
-    console.log('------------------------');
 
     if (allVisible && !intervalId) {
-        console.log('Starting image transition...');
         startImageTransition();
     } else if (!allVisible && intervalId) {
-        console.log('Stopping image transition...');
         clearInterval(intervalId);
         intervalId = null;
     }
@@ -57,7 +42,6 @@ const observerCallback = (entries) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-// 각 .stamp__item에 대해 초기 이미지 설정 후 옵저버 등록
 stampItems.forEach((item, index) => {
     let imgElement = document.createElement('img');
     imgElement.src = images[index][0];
@@ -77,6 +61,7 @@ function startImageTransition() {
         currentImageIndex = (currentImageIndex + 1) % images[0].length;
     }, 1200);
 }
+
 
 
 // ========== 한복 섹션 스크립트 ==========
@@ -105,5 +90,5 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // 한복 섹션 이미지에 대해 옵저버 설정
-    observeElements('.sec-21__feature-image', 0.3, hanbokFadeInCallback);
+    observeElements('.sec-17__feature-image', 0.3, hanbokFadeInCallback);
 });
