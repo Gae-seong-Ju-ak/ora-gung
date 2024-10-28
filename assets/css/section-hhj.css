@@ -1,7 +1,7 @@
-/* design-guide section */
+/* 디자인 가이드 섹션 */
 .h-line {
     width: 100%;
-    border: 1px solid var(--black);
+    border: 0.063rem solid var(--black);
 }
 
 .typography__subtitle {
@@ -161,63 +161,84 @@
         transform: translateX(-200%);
     }
 }
-/* design-guide section end */
+/* 디자인 가이드 섹션 end */
+
+/* 온보딩 섹션 */
+.section-bg_opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50% - 8px);
+    height: 100%;
+    background-color: #F0F8F7;
+    z-index: -1;
+}
+
+#sec-on-boarding {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15rem;
+}
 
 .on-boarding__intro {
     font-size: 2.813rem;
     font-weight: 800;
     text-align: center;
-    margin-top: 7.188rem;
+    margin-top: 10.438rem
 }
 
-.umm {
-    width: 50%;
+.carousel-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7.376rem;
 }
+
 .carousel-container {
     position: relative;
-    width: 100%;
-    height: 24rem;
+    width: 60%;
+    height: 35rem;
     perspective: 1000px;
-    cursor: grab;
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
-    margin-top: 6.688rem;
+    transform-style: preserve-3d;
 }
 
 .carousel-container:active {
-    cursor: grabbing;
+    cursor: url('../images/source/cursor_hover.svg'), auto;
 }
 
 .carousel {
     position: relative;
+    width: 100%;
     height: 100%;
-    width: 100%; /* 추가: 부모 컨테이너의 너비에 맞추기 */
     transform-style: preserve-3d;
     transition: transform 0.2s ease-out;
     display: flex;
-    justify-content: center; /* 추가: 자식 요소 수평 중앙 정렬 */
-    align-items: center; /* 추가: 자식 요소 수직 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    cursor: url('../images/source/cursor_hover.svg'), auto;
 }
 
 .phone {
     position: absolute;
-    left: 50%;
     top: 50%;
-    width: 12rem;
-    height: 24rem;
-    margin-left: -6rem;
-    margin-top: -12rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13.5rem;
+    height: 27rem;
+    margin-left: -6.75rem;
+    margin-top: -13.5rem;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition: transform 0.6s;
-    border-radius: 1.5rem;
     pointer-events: none;
-    cursor: pointer;
-}
-
-.phone.is-flipped {
-    transform: rotateY(180deg);
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .phone-side {
@@ -229,13 +250,10 @@
     overflow: hidden;
 }
 
-.phone-back {
-    transform: rotateY(180deg);
-    background-color: #222;
-}
-
 .phone img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    user-select: none;
 }
+/* 온보딩 섹션 end */

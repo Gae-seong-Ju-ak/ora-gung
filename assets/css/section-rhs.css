@@ -1,3 +1,57 @@
+/* 스탬프 섹션 */
+.stamp__title {
+    color: var(--tealGreen) !important;
+    margin-bottom: 11rem !important;
+    text-align: center !important;
+}
+
+.stamp__wrap {
+    width: 84.125rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; 
+}
+
+.stamp__item {
+    width: 41.438rem;
+    height: 32rem;
+    background-color: #f5f2e6; /* 배경 색상 설정 */
+    border-radius: 1rem; /* 모서리 둥글게 */
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stamp__item img {
+    width: 24.563rem;
+    height: auto;
+}
+
+@media screen and (max-width: 415px) {
+    .stamp__wrap {
+        width: 58.89rem;
+        gap: 1.05rem;
+    }
+
+    .stamp__item {
+        width: 29.01rem;
+        height: 22.4rem;
+        padding: 0.7rem;
+    }
+    
+    .stamp__item img {
+        width: 17.19rem;
+        height: auto;
+    }
+
+    .stamp__title {
+        margin-bottom: 7.7rem;
+    }
+}
+
 
 .sec-21__title {
     color: var(--tealGreen) !important;
