@@ -1,9 +1,27 @@
+// ========== 디자인 가이드 스크립트 ==========
+// 롤링 배너 복제본 생성
+let roller = document.querySelector('.icon__rolling-list');
+roller.id = 'roller1'; // 아이디 부여
+
+let clone = roller.cloneNode(true);
+// cloneNode : 노드 복제. 기본값은 false. 자식 노드까지 복제를 원하면 true 사용
+clone.id = 'roller2';
+document.querySelector('.icon__rolling-wrap').appendChild(clone); // wrap 하위 자식으로 부착
+
+document.querySelector('#roller1').style.left = '0px';
+document.querySelector('#roller2').style.left = document.querySelector('.icon__rolling-list').offsetWidth + 'px';
+// offsetWidth : 요소의 크기 확인(margin을 제외한 padding값, border값까지 계산한 값)
+
+roller.classList.add('original');
+clone.classList.add('clone');
+
+// ========== 온보딩 스크립트 ==========
 const phones = [
-    { id: 1, name: "Phone 1", frontImage: "./assets/images/on-boarding_1.webp" },
-    { id: 2, name: "Phone 2", frontImage: "./assets/images/on-boarding_2.webp" },
-    { id: 3, name: "Phone 3", frontImage: "./assets/images/on-boarding_3.webp" },
-    { id: 4, name: "Phone 4", frontImage: "./assets/images/on-boarding_4.webp" },
-    { id: 5, name: "Phone 5", frontImage: "./assets/images/on-boarding_5.webp" }
+    { id: 1, name: "Phone 1", frontImage: "./assets/images/mockup/on-boarding_1.webp" },
+    { id: 2, name: "Phone 2", frontImage: "./assets/images/mockup/on-boarding_2.webp" },
+    { id: 3, name: "Phone 3", frontImage: "./assets/images/mockup/on-boarding_3.webp" },
+    { id: 4, name: "Phone 4", frontImage: "./assets/images/mockup/on-boarding_4.webp" },
+    { id: 5, name: "Phone 5", frontImage: "./assets/images/mockup/on-boarding_5.webp" }
 ];
 
 const carousel = document.querySelector('.carousel');
