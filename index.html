@@ -28,14 +28,13 @@
     </noscript>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/section.css">
-    <link rel="stylesheet" href="./assets/css/section-hhj.css">
-    <link rel="stylesheet" href="./assets/css/section-rhs.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
-
+    <link rel="stylesheet" href="./assets/styles/base/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/base/main.css">
+    <link rel="stylesheet" href="./assets/styles/base/header.css">
+    <link rel="stylesheet" href="./assets/styles/base/section.css">
+    <link rel="stylesheet" href="./assets/styles/base/footer.css">
+    <link rel="stylesheet" href="./assets/styles/section-hhj.css">
+    <link rel="stylesheet" href="./assets/styles/section-rhs.css">
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
 
 
@@ -48,8 +47,7 @@
 
 <body>
     <div class="wrapper"> <!-- wrapper -->
-        <header>
-            <!-- header -->
+        <header> <!-- header -->
             <div class="header__wrap">
                 <div class="header__brand">
                     <a href="#" class="header__logo-link">
@@ -77,14 +75,13 @@
 
         <main>
             <button class="top-button">Top</button>
-            <section id="intro">
-                <!-- intro -->
+            <section id="intro"> <!-- intro -->
                 <div style="width: 100%; height: 60rem; display: flex; align-items: center; justify-content: center;">
                     <h1>메인 콘텐츠 구상 중...</h1>
                 </div>
             </section> <!-- intro  end -->
 
-            <section id="sec-design-guide">
+            <section id="sec-09"> <!-- section 09 -->
                 <h2 class="section__title">DESIGN GUIDE</h2>
 
                 <p class="typography__subtitle">TYPOGRAPHY</p>
@@ -219,10 +216,10 @@
                         </div>
                     </div>
                 </div>
-            </section> <!-- sec-design-guide end -->
+            </section> <!-- section 09 end -->
 
-            <section id="sec-on-boarding">
-                <div class="section-bg_opacity"></div>
+            <section id="sec-10"> <!-- section 10 -->
+                <div class="section-10__bg_opacity"></div>
                 <h2 class="section__title" style="padding-top: 16rem;" >Onboarding</h2>
                 <p class="on-boarding__intro"><span style="color: var(--tealGreen);">‘오라, 궁’</span>과 함께<br>한국 궁궐의 문을 열어 보세요.</p>
 
@@ -231,43 +228,43 @@
                         <div class="carousel"></div>
                     </div>
                 </div>
-            </section>
+            </section> <!-- section 10 end -->
 
-            <section id="sec-stamp">
-                <h2 class="section__title stamp__title">Stamp Design</h2>
+            <section id="sec-16"> <!-- section 16 -->
+                <h2 class="section__title section-16__title">Stamp Design</h2>
                 
-                <div class="stamp__wrap">
-                    <div class="stamp__item"></div>
-                    <div class="stamp__item"></div>
-                    <div class="stamp__item"></div>
-                    <div class="stamp__item"></div>
+                <div class="section-16__wrap">
+                    <div class="section-16__item"></div>
+                    <div class="section-16__item"></div>
+                    <div class="section-16__item"></div>
+                    <div class="section-16__item"></div>
                 </div>
-            </section>
+            </section> <!-- section 16 end -->
 
-            <!-- 섹션 21이라고 이름 붙이긴 했는데, 바뀌면 나중에 수정 한복 섹션임 class명도 딸깍 수정 하면 됨 -->
-            <section id="sec-21"> <!-- sec-21 -->
-                <h2 class="section__title sec-21__title">Hanbok page</h2>
-                <div class="sec-21__wrap">
-                    <div class="sec-21__feature-left">
-                        <p class="sec-21__feature-description">
-                            <img src="./assets/images/icon/hanbok_white.svg" alt="한복 아이콘" class="sec-21__feature-icon">
+
+            <section id="sec-17"> <!-- sec-17 -->
+                <h2 class="section__title sec-17__title">Hanbok page</h2>
+                <div class="sec-17__wrap">
+                    <div class="sec-17__feature-left">
+                        <p class="sec-17__feature-description">
+                            <img src="./assets/images/icon/hanbok_white.svg" alt="한복 아이콘" class="sec-17__feature-icon">
                             Filtering
                         </p>
-                        <h2 class="sec-21__feature-title">외국인 맞춤형 필터로<br>
+                        <h2 class="sec-17__feature-title">외국인 맞춤형 필터로<br>
                             당신만의 한복을 찾아보세요!</h2>
-                        <img src="./assets/images/mockup/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-21__feature-image">
+                        <img src="./assets/images/mockup/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-17__feature-image">
                     </div>
-                    <div class="sec-21__feature-right">
-                        <p class="sec-21__feature-description">
-                            <img src="./assets/images/icon/hanbok_white.svg" alt="한복 아이콘" class="sec-21__feature-icon">
+                    <div class="sec-17__feature-right">
+                        <p class="sec-17__feature-description">
+                            <img src="./assets/images/icon/hanbok_white.svg" alt="한복 아이콘" class="sec-17__feature-icon">
                             Flow
                         </p>
-                        <h2 class="sec-21__feature-title">당의와 다양한 한류 중심의<br>
+                        <h2 class="sec-17__feature-title">당의와 다양한 한류 중심의<br>
                             한복 매거진까지!</h2>
-                            <img src="./assets/images/mockup/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-21__feature-image">
+                            <img src="./assets/images/mockup/hanbok-mockup-1.webp" alt="한복 페이지 목업 사진" class="sec-17__feature-image">
                     </div>
                 </div>
-            </section> <!-- sec-21 end -->
+            </section> <!-- sec-17 end -->
         </main>
 
         <footer>
