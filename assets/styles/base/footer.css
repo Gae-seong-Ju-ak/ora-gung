@@ -144,7 +144,8 @@ footer {
 }
 
 .footer__member-name {
-    margin-bottom: 0.313rem;
+    display: inline-block;
+    margin-bottom: 0.469rem;
 }
 
 @media screen and (max-width: 415px) {
