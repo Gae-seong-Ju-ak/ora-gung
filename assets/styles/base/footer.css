@@ -1,16 +1,15 @@
 footer {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     /* height: 27.688rem; */
     height: auto;
-    max-width: 1920px;
-    margin: 0 auto;
     padding: 3.5rem;
-    background-color: var(--tealGreen);
-    border-radius: 3.125rem 3.125rem 0 0;
+    background-color: #232323;
+    /* border-radius: 3.125rem 3.125rem 0 0; */
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer__wrap {
@@ -20,6 +19,7 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     color: var(--white-txt);
+    padding-left: 8px;
 }
 
 /* 브랜드 로고 및 설명 */
