@@ -1,20 +1,22 @@
+
 // ========== 디자인 가이드 스크립트 ==========
 // 롤링 배너 복제본 생성
 let roller = document.querySelector('.icon__rolling-list');
-roller.id = 'roller1'; // 아이디 부여
+roller.id = 'roller1';
 
 let clone = roller.cloneNode(true);
-// cloneNode : 노드 복제. 기본값은 false. 자식 노드까지 복제를 원하면 true 사용
 clone.id = 'roller2';
-document.querySelector('.icon__rolling-wrap').appendChild(clone); // wrap 하위 자식으로 부착
+document.querySelector('.icon__rolling-wrap').appendChild(clone);
 
 document.querySelector('#roller1').style.left = '0px';
-document.querySelector('#roller2').style.left = document.querySelector('.icon__rolling-list').offsetWidth + 'px';
-// offsetWidth : 요소의 크기 확인(margin을 제외한 padding값, border값까지 계산한 값)
+document.querySelector('#roller2').style.left = document.querySelector('.icon__rolling-list > div').offsetWidth + 'px';
 
 roller.classList.add('original');
 clone.classList.add('clone');
 
+
+  
+  
 // ========== 온보딩 스크립트 ==========
 const phones = [
     { id: 1, name: "Phone 1", frontImage: "./assets/images/mockup/on-boarding_1.webp" },
@@ -111,5 +113,106 @@ carouselContainer.addEventListener('touchstart', handleDragStart);
 window.addEventListener('touchmove', handleDragMove, { passive: false });
 window.addEventListener('touchend', handleDragEnd);
 
-// 초기 위치 설정
-updateCarousel();
+
+
+
+//=== 페이드인 페이드 아웃 효과 ===
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                } else {
+                    entry.target.classList.remove("fade-in");
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    // 여러 클래스를 한번에 선택
+    const targetElements = document.querySelectorAll(".fade-wrap, .fade-wrap2");
+    targetElements.forEach((element) => observer.observe(element));
+});
+
+
+
+
+
+//==== 지도 스크롤 티거 ====
+
+const details = gsap.utils.toArray(".sec__03-content-box:not(:first-child)")
+const photos = gsap.utils.toArray(".sec__03-desktopPhoto:not(:first-child)")
+
+
+gsap.set(photos, {yPercent:101})
+
+const allPhotos = gsap.utils.toArray(".sec__03-desktopPhoto")
+
+
+
+let mm = gsap.matchMedia();
+
+
+mm.add("(min-width: 600px)", () => {
+
+
+  console.log("desktop")
+	
+  ScrollTrigger.create({
+	trigger:".sec__03-map",
+	start:"top top",
+	end:"bottom bottom",
+	pin:".sec__03-right"
+})
+
+
+details.forEach((detail, index)=> {
+
+	let headline = detail.querySelector(".sec__03-content-box h3")
+	let animation = gsap.timeline()
+	   .to(photos[index], {yPercent:0})
+	   .set(allPhotos[index], {autoAlpha:0})
+	ScrollTrigger.create({
+		trigger:headline,
+		start:"top 80%",
+		end:"top 50%",
+		animation:animation,
+		scrub:true,
+		markers:false
+	})
+})
+	
+	
+  
+  return () => { 
+	  console.log("mobile")
+  };
+});
+
+
+
+// ===유저 데스크 원 스크롤 티거 ===
+
+gsap.fromTo(".moving-circle", 
+  { strokeDasharray: 500, strokeDashoffset: 500 },  
+  {
+    strokeDashoffset: 0,  
+    scrollTrigger: {
+      trigger: ".moving-circle",   
+      start: "top 80%",            
+      end: "top 20%",              
+      scrub: true,                 
+    }
+  }
+);
+
+
+
+
+
+
+
+
+

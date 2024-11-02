@@ -1,0 +1,118 @@
+.background {
+    padding-top: 14.813rem;
+    text-align: center;
+    position: relative;
+}
+
+.background__wrapper {
+    text-align: center;
+}
+
+.background__section-title {
+    margin-top: 1rem;
+}
+
+.background__circle {
+    width: .5rem;
+    height: .5rem;
+    background-color: #00A695;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.background__subtitle {
+    font-size: 1.5rem;
+    color: #121212;
+    font-weight: 800;
+}
+
+.background__title {
+    margin-top: 2.25rem;
+    font-size: 3.125rem;
+    color: #121212;
+}
+
+.background__description {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.background__line {
+    animation: moveLine 2s linear infinite;
+}
+
+
+@keyframes moveLine {
+    0% {
+        stroke-dasharray: 10, 222;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 100, 222;
+        stroke-dashoffset: -232;
+        /* Adjust based on the length of the line */
+    }
+}
+
+.introduce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 42rem;
+    background-color: #00A695;
+    border-radius: 3rem;
+}
+
+.introduce__question {
+    width: 40rem;
+    height: 4rem;
+    background-color: #F6F6F6;
+    border-radius: 5rem 5rem 5rem 5rem;
+}
+
+.introduce__question-title {
+    font-size: 1rem;
+    line-height: 4rem;
+    font-weight: 400;
+}
+
+
+.introduce__question-title--highlight {
+    color: #00A695;
+    font-weight: 800;
+}
+
+.introduce__logo {
+    width: 21.25rem;
+    margin-top: 4.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.introduce__logo-img {
+    width: 100%;
+    height: auto;
+}
+
+.introduce__description {
+    margin-top: 5rem;
+    color: #F6F6F6;
+    margin-top: 5rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+.app_line {
+    position: absolute;
+    /* top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 100%;
+    height: 100%;
+}
