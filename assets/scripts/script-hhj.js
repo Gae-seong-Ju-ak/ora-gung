@@ -15,8 +15,7 @@ roller.classList.add('original');
 clone.classList.add('clone');
 
 
-  
-  
+
 // ========== 온보딩 스크립트 ==========
 const phones = [
     { id: 1, name: "Phone 1", frontImage: "./assets/images/mockup/on-boarding_1.webp" },
@@ -113,11 +112,12 @@ carouselContainer.addEventListener('touchstart', handleDragStart);
 window.addEventListener('touchmove', handleDragMove, { passive: false });
 window.addEventListener('touchend', handleDragEnd);
 
-
-
-
-//=== 페이드인 페이드 아웃 효과 ===
+// === 초기 위치 설정 및 페이드인 효과 ===
 document.addEventListener("DOMContentLoaded", function() {
+    // 캐러셀 초기 위치 설정
+    updateCarousel();
+    
+    // 페이드인 페이드 아웃 효과
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
