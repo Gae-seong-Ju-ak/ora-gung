@@ -26,6 +26,7 @@ html {
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     background-color: var(--white-bg);
+    overflow-x: hidden;
 }
 
 a {
@@ -115,29 +116,47 @@ textarea {
     width: 100%;
     max-width: 1920px;
     padding: 0 7.5%;
+    margin: 0 auto;
     background-color: var(--white-bg);
 }
 
 /* 미디어 쿼리 */
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 767px) {
+    .top-button {
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     html {
         font-size: 6px;
     }
-}
 
-@media screen and (min-width: 1024px) {
-    html {
-        font-size: 8px;
+    .top-button {
+        bottom: 1.875rem;
+        right: 1.875rem;
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    html {
+        font-size: 8px;
+    }
+
+    .top-button {
+        bottom: 1.875rem;
+        right: 1.875rem;
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
     html {
         font-size: 10px;
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
     html {
         font-size: 12px;
     }
