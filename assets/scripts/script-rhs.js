@@ -463,6 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // 첫 번째 슬라이드쇼 인스턴스
 const slideshow1 = new ImageSlideshow({
     images: [
+        './assets/images/mockup/hanbok-a.webp',
         './assets/images/mockup/hanbok-1.webp',
         './assets/images/mockup/hanbok-2.webp',
         './assets/images/mockup/hanbok-3.webp'
