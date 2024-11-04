@@ -6,213 +6,566 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Sticker Board</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
 
-        .sticker-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+        body{
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
         }
+/* body {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    margin: 0; 
+    height: 100vh; 
+    overflow: hidden; 
+}
 
-        .sticker {
-            width: 100px;
-            height: 100px;
-            background-color: #ffcc00;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-            cursor: pointer;
-            user-select: none;
-        }
+.sticker-container {
+    display: flex;
+    flex-direction: column; 
+    width: 20rem;
+    
+    gap: 10px; 
+    margin: 20px; 
+    flex-shrink: 0; 
+}
 
-        .sticker-red {
-            background-color: #ff6666;
-        }
+.sticker {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
 
-        .sticker-blue {
-            background-color: #6699ff;
-        }
+.sticker-red {
+    background-color: #ff6666;
+}
 
-        .sticker-green {
-            background-color: #66cc66;
-        }
+.sticker-blue {
+    background-color: #6699ff;
+}
 
-        .drop-zone {
-            width: 80%;
-            height: 400px;
-            border: 2px dashed #ccc;
-            position: relative;
-            overflow: hidden;
-        }
+.sticker-green {
+    background-color: #66cc66;
+}
 
-        .sticker-in-zone {
-            position: absolute;
-            cursor: move;
-            padding: 5px;
-            user-select: none;
-        }
+.drop-zone {
+    width: 100rem; 
+    height: 95vh; 
+    border: 2px dashed #ccc;
+    position: relative;
+    overflow: hidden;
+    background-image: url('your-background-image-url.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
 
-        .resize-handle,
-        .rotate-handle {
-            width: 10px;
-            height: 10px;
-            background-color: #666;
-            position: absolute;
-            cursor: pointer;
-            border-radius: 50%;
-        }
+.sticker-in-zone {
+    position: absolute;
+    cursor: move;
+    padding: 5px;
+    user-select: none;
+}
 
-        .resize-handle {
-            right: -5px;
-            bottom: -5px;
-            cursor: se-resize;
-        }
+.resize-handle,
+.rotate-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #666;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+}
 
-        .rotate-handle {
-            left: -5px;
-            top: -5px;
-            cursor: grab;
-        }
+.resize-handle {
+    right: -5px;
+    bottom: -5px;
+    cursor: se-resize;
+}
 
-        .delete-btn {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 20px;
-            height: 20px;
-            background: red;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 12px;
-            cursor: pointer;
-        }
-    </style>
+.rotate-handle {
+    left: -5px;
+    top: -5px;
+    cursor: grab;
+}
+
+.delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.sticker-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+
+button {
+    margin-top: auto; 
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
+
+    .drop-zone {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .sticker-container {
+        margin: 0 0 20px 0;
+    }
+} */
+.sticker-in-zone {
+    position: absolute;
+    cursor: move;
+    padding: 5px;
+    user-select: none;
+}
+.resize-handle,
+.rotate-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #666;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.resize-handle {
+    right: -5px;
+    bottom: -5px;
+    cursor: se-resize;
+}
+
+.rotate-handle {
+    left: -5px;
+    top: -5px;
+    cursor: grab;
+}
+
+.delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .sec-sticker-wrap{
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: first baseline;
+
+    }
+
+.sec-sticker-container {
+    width: 46.313rem; /* 컨테이너 너비 설정 */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-y: scroll;
+
+}
+
+.sticker-select {
+    width: 500px;
+    margin-bottom: 20px; /* 아래쪽 여백 추가 */
+    text-align: center;
+    justify-content: space-between;
+}
+
+.sticker-group {
+    display: flex; /* 가로로 배치 */
+    justify-content: space-between; /* 각 스티커 간의 간격을 균일하게 */
+    margin-bottom: 10px; /* 아래쪽 여백 추가 */
+}
+
+.sticker {
+    width: 237.5px; /* 각 스티커의 너비 설정 */
+    height: 170.08px; /* 각 스티커의 높이 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.sticker img{
+    width: 237.5px; /* 각 스티커의 너비 설정 */
+    height: 170.08px; /* 각 스티커의 높이 설정 */
+}
+.drop-zone-wrap{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* 드롭 존의 오버플로우 숨김 */
+    background-image: url('./assets/images/source/stamp-wrap.webp');
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 조정 */
+    position: relative;
+}
+
+#saveButton {
+    position: absolute; /* 절대 위치 지정 */
+    bottom: 20px; /* 아래쪽으로 20px */
+    right: 20px; /* 오른쪽으로 20px */
+    width: 200px;
+    height: 50px;
+    background-color: #01A695;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+#saveButton:hover {
+    background-color: #01a090;
+}
+.sticker-select h2{
+    padding-top: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: #01a090;
+    display: inline-block;
+    border-radius: 30px;
+    color: #fff;
+    line-height: 40px;
+}
+</style>
 </head>
 
 <body>
-    <div class="sticker-container">
-        <div class="sticker sticker-red" draggable="true">Sticker 1</div>
-        <div class="sticker sticker-blue" draggable="true">Sticker 2</div>
-        <div class="sticker sticker-green" draggable="true">Sticker 3</div>
+    <div class="sec-sticker-wrap">
+        <div class="sec-sticker-container">
+            <div class="sticker-select">
+                <h2>경복궁</h2>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp-gyung-1.png" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp-gyung-2.png" alt="">
+                    </div>
+                </div>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp-gyung-3.png" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp-gyung-4.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="sticker-select">
+                <h2>창덕궁</h2>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="sticker-select">
+                <h2>창경궁</h2>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="sticker-select">
+                <h2>덕수궁</h2>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="sticker-select">
+                <h2>Special</h2>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+                <div class="sticker-group">
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                    <div class="sticker sticker-red draggable" draggable="true">
+                        <img src="./assets/images/source/stamp_1a.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="drop-zone-wrap">
+            <div class="drop-zone container" id="dropZone"></div>
+            <button id="saveButton">저장하기</button>
+        </div>
+
     </div>
-    <div class="drop-zone" id="dropZone"></div>
-    <button id="saveButton">Save as Image</button>
+    
 
     <!-- Include jQuery and html2canvas -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        $(document).ready(function () {
-            const dropZone = $("#dropZone");
-            let draggedSticker = null;
+$(document).ready(function () {
+    const dropZone = $("#dropZone");
+    let draggedSticker = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let isResizing = false;
+    let isRotating = false;
+    let isDragging = false;
 
-            $(".sticker").on("dragstart", function (e) {
-                draggedSticker = $(this).clone().removeClass("sticker").addClass("sticker-in-zone");
-                // Set a transparent image to prevent enlargement
-                const transparentImg = new Image();
-                transparentImg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/gaEX6cAAAAASUVORK5CYII=";
-                e.originalEvent.dataTransfer.setDragImage(transparentImg, 0, 0);
+    // 스티커 드래그 시
+    $(".sticker").on("mousedown", function (e) {
+        e.preventDefault();
+        draggedSticker = $(this).clone().removeClass("sticker").addClass("sticker-in-zone");
+        dropZone.append(draggedSticker);
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+        draggedSticker.css({
+            position: "absolute",
+            top: e.pageY - dropZone.offset().top - offsetY + "px",
+            left: e.pageX - dropZone.offset().left - offsetX + "px",
+        });
+        isDragging = true;
+        $(document).on("mousemove", moveSticker);
+        $(document).one("mouseup", stopDragging);
+        addControls(draggedSticker);
+    });
+
+    // 드래그한 스티커를 이동할 때
+    dropZone.on("mousedown", ".sticker-in-zone", function (e) {
+        e.preventDefault();
+        draggedSticker = $(this);
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+        isDragging = true;
+        $(document).on("mousemove", moveSticker);
+        $(document).one("mouseup", stopDragging);
+    });
+
+    function moveSticker(e) {
+        if (isDragging && draggedSticker) {
+            draggedSticker.css({
+                top: e.pageY - dropZone.offset().top - offsetY + "px",
+                left: e.pageX - dropZone.offset().left - offsetX + "px",
             });
+        }
+    }
 
-            // Drop Zone: Only accept drops within this element
-            dropZone.on("dragover", function (e) {
-                e.preventDefault(); // Allows drop
-            });
+    function stopDragging() {
+        $(document).off("mousemove", moveSticker);
+        isDragging = false;
+        draggedSticker = null;
+    }
 
-            dropZone.on("drop", function (e) {
-                e.preventDefault();
-                if (draggedSticker) {
-                    const zoneOffset = dropZone.offset();
-                    const mouseX = e.originalEvent.clientX;
-                    const mouseY = e.originalEvent.clientY;
+    // 스티커에 컨트롤 추가 (중복 제거)
+    function addControls(sticker) {
+        // 이미 추가된 컨트롤이 있으면 다시 추가하지 않음
+        if (sticker.find(".delete-btn").length > 0) return;
 
-                    // Ensure drop happens only within drop-zone boundaries
-                    if (mouseX >= zoneOffset.left && mouseX <= zoneOffset.left + dropZone.width() &&
-                        mouseY >= zoneOffset.top && mouseY <= zoneOffset.top + dropZone.height()) {
-                        draggedSticker.css({
-                            top: mouseY - zoneOffset.top - draggedSticker.height() / 2 + "px",
-                            left: mouseX - zoneOffset.left - draggedSticker.width() / 2 + "px"
-                        });
+        // 삭제 버튼
+        const deleteButton = $("<button>").text("×").addClass("delete-btn");
+        deleteButton.on("click", function (e) {
+            e.stopPropagation(); // 다른 이벤트 방지
+            sticker.remove();
+        });
+        sticker.append(deleteButton);
 
-                        addControls(draggedSticker);
-                        dropZone.append(draggedSticker);
-                    }
-                    draggedSticker = null;
-                }
-            });
+        // 크기 조절 핸들
+        const resizeHandle = $("<div>").addClass("resize-handle");
+        sticker.append(resizeHandle);
 
-            function addControls(sticker) {
-                const resizeHandle = $("<div>").addClass("resize-handle");
-                sticker.append(resizeHandle);
+        // 회전 핸들
+        const rotateHandle = $("<div>").addClass("rotate-handle");
+        sticker.append(rotateHandle);
 
-                const rotateHandle = $("<div>").addClass("rotate-handle");
-                sticker.append(rotateHandle);
+        let startX, startY, startWidth, startHeight;
 
-                const deleteButton = $("<button>").text("×").addClass("delete-btn");
-                deleteButton.on("click", function () {
-                    sticker.remove();
-                });
-                sticker.append(deleteButton);
+        resizeHandle.on("mousedown", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            startX = e.clientX;
+            startY = e.clientY;
+            const stickerImage = sticker.find("img");
+            startWidth = stickerImage.width();
+            startHeight = stickerImage.height();
+            isResizing = true;
 
-                let startX, startY, startWidth, startHeight;
-                resizeHandle.on("mousedown", function (e) {
-                    e.preventDefault();
-                    startX = e.clientX;
-                    startY = e.clientY;
-                    startWidth = sticker.width();
-                    startHeight = sticker.height();
-                    $(document).on("mousemove", resizeSticker);
-                    $(document).on("mouseup", stopResize);
-                });
-
-                function resizeSticker(e) {
-                    const delta = e.clientX - startX;
-                    const newSize = Math.max(50, startWidth + delta);
-                    sticker.css({ width: newSize + "px", height: newSize + "px" });
-                }
-
-                function stopResize() {
-                    $(document).off("mousemove", resizeSticker);
-                    $(document).off("mouseup", stopResize);
-                }
-
-                let currentRotation = 0;
-                rotateHandle.on("mousedown", function (e) {
-                    e.preventDefault();
-                    const centerX = sticker.offset().left + sticker.width() / 2;
-                    const centerY = sticker.offset().top + sticker.height() / 2;
-                    const startAngle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-
-                    $(document).on("mousemove", function rotateSticker(e) {
-                        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-                        const rotation = (angle - startAngle) * (180 / Math.PI) + currentRotation;
-                        sticker.css("transform", `rotate(${rotation}deg)`);
+            // 크기 조절 함수 정의
+            function resizeSticker(e) {
+                if (isResizing) {
+                    const deltaX = e.clientX - startX;
+                    const deltaY = e.clientY - startY;
+                    const newWidth = Math.max(50, startWidth + deltaX);
+                    const newHeight = Math.max(50, startHeight + deltaY);
+                    stickerImage.css({
+                        width: newWidth + "px",
+                        height: newHeight + "px"
                     });
-
-                    $(document).on("mouseup", function () {
-                        currentRotation += parseFloat(sticker.css("transform").split("(")[1].split("deg")[0]) || 0;
-                        $(document).off("mousemove rotateSticker");
-                    });
-                });
+                }
             }
 
-            $("#saveButton").on("click", function () {
-                html2canvas(dropZone[0]).then(canvas => {
-                    const link = document.createElement("a");
-                    link.download = "sticker_board.png";
-                    link.href = canvas.toDataURL();
-                    link.click();
-                });
+            $(document).on("mousemove", resizeSticker);
+            $(document).one("mouseup", function () {
+                isResizing = false;
+                stopResize(resizeSticker);
             });
         });
+
+        function stopResize(resizeSticker) {
+            $(document).off("mousemove", resizeSticker);
+        }
+
+        let currentRotation = 0;
+
+        rotateHandle.on("mousedown", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const stickerOffset = sticker.offset();
+            const centerX = stickerOffset.left + sticker.width() / 2;
+            const centerY = stickerOffset.top + sticker.height() / 2;
+            const startAngle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+            isRotating = true;
+
+            function rotateSticker(e) {
+                if (isRotating) {
+                    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+                    const rotation = (angle - startAngle) * (180 / Math.PI) + currentRotation;
+                    sticker.css("transform", `rotate(${rotation}deg)`);
+                }
+            }
+
+            $(document).on("mousemove", rotateSticker);
+            $(document).one("mouseup", function () {
+                const matrix = sticker.css("transform");
+                if (matrix !== 'none') {
+                    const values = matrix.split('(')[1].split(')')[0].split(',');
+                    const a = values[0];
+                    const b = values[1];
+                    const rotation = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+                    currentRotation = rotation;
+                }
+                isRotating = false;
+                stopRotation(rotateSticker);
+            });
+        });
+
+        function stopRotation(rotateSticker) {
+            $(document).off("mousemove", rotateSticker);
+        }
+    };
+
+    // 저장 버튼 클릭 시 캔버스 이미지 생성
+    $("#saveButton").on("click", function () {
+        html2canvas(dropZone[0], {
+            useCORS: true,
+            allowTaint: true, // 외부 이미지가 캔버스에 그려질 수 있도록 허용
+            scale: 2 // 해상도를 높이기 위해 배율 설정
+        }).then(canvas => {
+            const link = document.createElement("a");
+            link.download = "sticker_board.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        }).catch(error => {
+            console.error("이미지 저장 중 오류 발생:", error);
+            alert("이미지를 저장하는 중 오류가 발생했습니다.");
+        });
+    });
+});
+
+
+$(function() {
+    var $body = $('body');
+    $body.css('overflow', 'hidden');
+    $('.sec-sticker-container').on('wheel', function(e) {
+        e.stopPropagation();
+    });
+    $('.drop-zone-wrap').on('wheel', function(e) {
+        e.preventDefault();
+    });
+});
+
+
+
+
     </script>
 </body>
 
