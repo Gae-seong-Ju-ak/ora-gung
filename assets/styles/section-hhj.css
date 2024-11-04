@@ -346,7 +346,7 @@
     height: 46rem;
     position: relative;
     overflow: hidden;
-    margin-left: 10rem;
+    margin-left: 20rem;
 }
 
 .sec__10-desktopPhoto {
@@ -1259,7 +1259,12 @@
  }
  .sec__05-rolling-phone{
     position: absolute;
-    top: 50%; left: 40%;
+    top: 50%; left: 50%;
+
+ }
+ .sec__05-rolling-phone img{
+    transform: translate(-50%, 0);
+
  }
 .sec__05-rolling-circle{
     width: 40rem;
@@ -1267,13 +1272,16 @@
     border-radius: 100%;
     background-color: #E9F4EC;
 
-    position: absolute;
-    top: 50%; left: 30%;
+    position: relative;
+    top: -35%;
     z-index: -1;
+
+    display: inline-block;
+    
+
 }
 .sec__05-rolling-phone img{
     width: 20.659rem;
-
 }
 
 /*  */
@@ -1368,39 +1376,40 @@
 
 .sec__07-persona-wrap .persona__1{
     position: absolute;
-    top: 0; left: 0rem;
+    top: 0; left: 20px;
     transition: all .5s ease-in-out;
     z-index: 3;
 }
+
 .sec__07-persona-wrap .persona__2{
     position: absolute;
-    top: 0; left: 0rem;
+    top: 0; left: 20px;
     transition: all .5s ease-in-out;
     z-index: 2;
 }
 .sec__07-persona-wrap .persona__3{
     position: absolute;
-    top: 0; left: 0rem;
+    top: 0; right: 20px;
     transition: all .5s ease-in-out;
     z-index: 2;
 }
 .sec__07-persona-wrap .persona__4{
     position: absolute;
-    top: 0; left: 0rem;
+    top: 0; right: 20px;
     transition: all .5s ease-in-out;
     z-index: 4;
 }
 .sec__07-persona-wrap .persona__1 img{
-    transform: translate(90%, 0%);
+    transform: translate(125%, 0%);
 }
 .sec__07-persona-wrap .persona__2 img{
     transform: translate(40%, 20%);
 }
 .sec__07-persona-wrap .persona__3 img{
-    transform: translate(160%, 40%);
+    transform: translate(-35%, 40%);
 }
 .sec__07-persona-wrap .persona__4 img{
-    transform: translate(100%, 70%);
+    transform: translate(-120%, 70%);
 }
 
 
@@ -1414,15 +1423,16 @@
     transform: translate(5%, 0%);
 }
 .sec__07-persona-wrap:hover .persona__2{
-    transform: translate(-40%, 40%);
+    transform: translate(-50%, 40%);
 }
 .sec__07-persona-wrap:hover .persona__3{
-    transform: translate(35%, 20%);
+    transform: translate(45%, 60%);
 }
 .sec__07-persona-wrap:hover .persona__4{
     top: 10%;
     transform: translate(0%, 20%);
 }
+
 
 
 .sec__07-line{
@@ -1625,6 +1635,19 @@
     height: 12.75rem;
 }
 
+.sec_08-svg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
+    max-width: 697px; /* 최대 너비를 설정하여 원래 크기 유지 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.sec_08-svg-container>svg {
+    width: 43.5rem; /* 부모 요소의 너비에 맞춰 100% 설정 */
+    height: auto; /* 비율 유지하면서 자동으로 높이 조정 */
+}
 
 /*  */
 
