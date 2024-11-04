@@ -95,8 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // 캐러셀 아이템 데이터
-const carouselData = [
-    {
+const carouselData = [{
         title: '경복궁',
         subtitle: '큰 복을 누리라!',
         image: './assets/images/source/palace-a.svg',
@@ -125,23 +124,92 @@ const carouselData = [
 class Carousel {
     constructor(selector) {
         this.container = document.querySelector(selector);
+        if (!this.container) {
+            console.error('Carousel container not found');
+            return;
+        }
+
+        // rem 값을 가져오기 위한 함수
+        this.remToPx = (rem) => rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+        // vw 값을 가져오기 위한 함수 추가
+        this.vwToPx = (vw) => (vw * window.innerWidth) / 100;
+
+        this.currentIndex = 0;
+        this.isDragging = false;
+        this.startX = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = null;
+        this.items = [];
+
+        // CSS에서 가져온 값들을 설정
+        this.itemWidth = 53.448; // rem
+        this.itemHeight = 42.813; // rem
+        this.itemGap = 3.438; // rem
+        this.itemPadding = 3.031; // rem
+        this.itemBorderRadius = 3.125; // rem
+
         this.init();
     }
 
     init() {
+        // 컨테이너 스타일 설정 - CSS 클래스와 일치하도록
+        this.container.style.width = '100vw';
+        this.container.style.position = 'relative';
+        this.container.style.display = 'flex';
+        this.container.style.alignItems = 'center';
+        this.container.style.justifyContent = 'center';
+        this.container.style.overflow = 'hidden';
+
+        // 내부 래퍼 생성 및 스타일 설정
+        this.wrapper = document.createElement('div');
+        this.wrapper.style.display = 'flex';
+        this.wrapper.style.position = 'relative';
+        this.wrapper.style.transition = 'transform 0.3s ease';
+        this.wrapper.style.gap = `${this.itemGap}rem`;
+        this.wrapper.style.alignItems = 'center';
+
         // 캐러셀 아이템 생성
         carouselData.forEach((data) => {
             const item = this.createCarouselItem(data);
-            this.container.appendChild(item);
+            this.wrapper.appendChild(item);
+            this.items.push(item);
         });
 
-        // 첫 번째 아이템이 화면 중앙에 오도록 컨테이너 위치 조정
-        this.centerFirstItem();
+        this.container.appendChild(this.wrapper);
+
+        // 초기 위치 설정
+        this.setInitialPosition();
+
+        // 이벤트 리스너 추가
+        this.addEventListeners();
+
+        // 윈도우 리사이즈 시 위치 재조정
+        window.addEventListener('resize', () => {
+            this.setInitialPosition();
+        });
+    }
+
+    setInitialPosition() {
+        const viewportWidth = window.innerWidth;
+        const itemWidthPx = this.remToPx(this.itemWidth);
+        const gapPx = this.remToPx(this.itemGap);
+
+        // viewport의 중앙에서 시작하는 위치 계산
+        const offset = (viewportWidth / 2) + (itemWidthPx / 2);
+
+        this.initialOffset = offset;
+        this.setTranslate(offset);
     }
 
     createCarouselItem(data) {
         const item = document.createElement('div');
         item.className = 'sec-12__carousel-item';
+        item.style.width = `${this.itemWidth}rem`;
+        item.style.height = `${this.itemHeight}rem`;
+        item.style.padding = `3.813rem ${this.itemPadding}rem 3.279rem ${this.itemPadding}rem`;
+        item.style.borderRadius = `${this.itemBorderRadius}rem`;
         item.innerHTML = `
             <p class="sec-12__carousel-text">${data.subtitle}</p>
             <p class="sec-12__carousel-text-big">${data.title}</p>
@@ -153,22 +221,358 @@ class Carousel {
         return item;
     }
 
-    centerFirstItem() {
-        // 첫 번째 아이템과 gap을 포함하여 중앙에 위치하도록 계산
-        const firstItem = this.container.querySelector('.sec-12__carousel-item');
-        const containerWidth = this.container.offsetWidth;
-        const firstItemWidth = firstItem.offsetWidth;
-        const gap = parseFloat(getComputedStyle(this.container).gap) || 0;
+    addEventListeners() {
+        // 마우스 이벤트
+        this.wrapper.addEventListener('mousedown', this.dragStart.bind(this));
+        window.addEventListener('mousemove', this.dragMove.bind(this));
+        window.addEventListener('mouseup', this.dragEnd.bind(this));
+        window.addEventListener('mouseleave', this.dragEnd.bind(this));
 
-        // 첫 번째 아이템의 반 너비와 gap을 추가하여 이동 거리 계산
-        const initialOffset = (containerWidth - firstItemWidth + gap * 5);
+        // 터치 이벤트
+        this.wrapper.addEventListener('touchstart', this.dragStart.bind(this));
+        window.addEventListener('touchmove', this.dragMove.bind(this));
+        window.addEventListener('touchend', this.dragEnd.bind(this));
+    }
 
-        // 첫 번째 아이템이 중앙에 오도록 컨테이너 이동
-        this.container.style.transform = `translateX(${initialOffset}px)`;
+    dragStart(e) {
+        if (e.type === 'mousedown') {
+            e.preventDefault();
+        }
+        this.isDragging = true;
+        this.startX = this.getPositionX(e);
+        this.startPosition = this.getCurrentTranslate();
+
+        this.wrapper.style.transition = 'none';
+        if (this.animationID) {
+            cancelAnimationFrame(this.animationID);
+        }
+    }
+
+    dragMove(e) {
+        if (!this.isDragging) return;
+
+        const currentX = this.getPositionX(e);
+        const diff = currentX - this.startX;
+        const newTranslate = this.startPosition + diff;
+
+        this.setTranslate(newTranslate);
+    }
+
+    dragEnd() {
+        if (!this.isDragging) return;
+
+        this.isDragging = false;
+        this.wrapper.style.transition = 'transform 0.3s ease';
+
+        const currentTranslate = this.getCurrentTranslate();
+        const totalWidth = this.remToPx(this.itemWidth + this.itemGap);
+        const moveAmount = currentTranslate - this.initialOffset;
+        let snapIndex = Math.round(moveAmount / -totalWidth);
+
+        // 범위 제한
+        snapIndex = Math.max(0, Math.min(snapIndex, carouselData.length - 1));
+
+        // 새로운 위치 계산
+        const newTranslate = this.initialOffset - (snapIndex * totalWidth);
+        this.setTranslate(newTranslate);
+        this.currentIndex = snapIndex;
+    }
+
+    getCurrentTranslate() {
+        const style = window.getComputedStyle(this.wrapper);
+        const matrix = new WebKitCSSMatrix(style.transform);
+        return matrix.m41;
+    }
+
+    setTranslate(x) {
+        this.wrapper.style.transform = `translateX(${x}px)`;
+    }
+
+    getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
     }
 }
 
 // 캐러셀 초기화
 document.addEventListener('DOMContentLoaded', () => {
     new Carousel('.sec-12__carousel');
+});
+
+
+// ========== 이미지 변경 스크립트 ========== 
+
+class ImageSlideshow {
+    constructor(options) {
+        this.images = options.images;
+        this.interval = options.interval || 2000;
+        this.currentIndex = 0;
+        this.img1 = document.querySelector(options.img1Selector);
+        this.img2 = document.querySelector(options.img2Selector);
+        this.isTransitioning = false;
+        this.intervalId = null;
+
+        // 초기 상태 설정
+        this.img1.src = this.images[0];
+        this.img2.src = this.images[1];
+        this.currentIndex = 1; // 다음 전환을 위해 1로 설정
+    }
+
+    preloadImages() {
+        // 이미지 미리 로드
+        this.images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+
+    changeImage() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+
+        const currentImg = this.img1.classList.contains('active') ? this.img1 : this.img2;
+        const nextImg = currentImg === this.img1 ? this.img2 : this.img1;
+
+        // 다음 이미지 설정
+        nextImg.src = this.images[this.currentIndex];
+
+        currentImg.classList.remove('active');
+        nextImg.classList.add('active');
+
+        // 전환 애니메이션이 완료된 후 상태 초기화
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 1000);
+
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }
+
+    start() {
+        this.preloadImages();
+        this.intervalId = setInterval(() => this.changeImage(), this.interval);
+    }
+
+    stop() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+    }
+
+    handleVisibilityChange() {
+        if (document.hidden) {
+            this.stop();
+        } else {
+            this.start();
+        }
+    }
+}
+
+// ========== 이미지 변경 스크립트 ========== 
+
+
+// ========== 이미지 변경 스크립트 (AI 일정 적용) ==========
+
+// AI 일정 이미지 슬라이드쇼
+const aiSlideshow = new ImageSlideshow({
+    images: [
+        './assets/images/mockup/ai_planer_mockup_1.webp',
+        './assets/images/mockup/ai_planer_mockup_2.webp',
+        './assets/images/mockup/ai_planer_mockup_3.webp',
+        './assets/images/mockup/ai_planer_mockup_4.webp',
+        './assets/images/mockup/ai_planer_mockup_5.webp',
+        './assets/images/mockup/ai_planer_mockup_6.webp',
+        './assets/images/mockup/ai_planer_mockup_7.webp'
+    ],
+    interval: 2000,
+    img1Selector: '.sec-12__ai-img.img1',
+    img2Selector: '.sec-12__ai-img.img2'
+});
+
+// 슬라이드쇼 시작
+aiSlideshow.start();
+
+// 페이지 가시성 변경 감지
+document.addEventListener('visibilitychange', () => {
+    aiSlideshow.handleVisibilityChange();
+});
+
+// ========== 이미지 변경 스크립트 (AI 일정 적용) ==========
+
+
+// ========== 이미지 변경 스크립트 (AR 가이드 적용) ==========
+
+const arSlideshow = new ImageSlideshow({
+    images: [
+        './assets/images/mockup/sec-13-ar-guide-a.webp',
+        './assets/images/mockup/sec-13-ar-guide-b.webp',
+        './assets/images/mockup/sec-13-ar-guide-c.webp',
+        './assets/images/mockup/sec-13-ar-guide-d.webp'
+    ],
+    interval: 2000,
+    img1Selector: '.sec-13__guide-image.img1',
+    img2Selector: '.sec-13__guide-image.img2'
+});
+
+// 슬라이드쇼 시작
+arSlideshow.start();
+
+// 페이지 가시성 변경 감지
+document.addEventListener('visibilitychange', () => {
+    arSlideshow.handleVisibilityChange();
+});
+
+// ========== 이미지 변경 스크립트 (AR 가이드 적용) ==========
+
+
+// ========== 미션 카드 회전 효과  ==========
+
+// 미션 카드 요소 선택
+let missionCards = document.querySelectorAll('.sec-13__mission-card');
+const rotationStrength = 0.5;  // 회전 강도
+const perspective = 1000;  // 원근 거리
+
+// 회전 강도 계산 함수
+function calculateRotation(value) { 
+    return Math.pow(Math.abs(value), 1.5) * Math.sign(value);
+}
+
+// 마우스 이벤트 핸들러 추가
+missionCards.forEach(card => {
+    card.style.perspective = `${perspective}px`;
+    card.style.transformStyle = 'preserve-3d';
+    card.style.transition = 'transform 0.1s ease-out';
+
+    // mousemove 이벤트 핸들러 추가
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect(); // 카드 요소의 위치 및 크기 정보
+        const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2); 
+        const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+        
+        // 회전 강도 계산
+        const rotateX = calculateRotation(y) * rotationStrength * 45;
+        const rotateY = calculateRotation(-x) * rotationStrength * 45;
+        
+        // 카드 요소에 회전 효과 적용
+        card.style.transform = `
+            perspective(${perspective}px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            scale3d(1.05, 1.05, 1.05)
+        `;
+    });
+
+    // mouseleave 이벤트 핸들러 추가
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+});
+
+// ========== 브라우저 별 비디오 변경  ==========
+document.addEventListener("DOMContentLoaded", function () {
+    // Safari 또는 iOS 브라우저 감지
+    const isSafariOrIOS = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+        (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream);
+
+    // sec-14의 비디오 파일 배열
+    const sec14VideoFiles = [
+        "ar-mission-1", "ar-mission-2", "ar-mission-3",
+        "ar-mission-4", "ar-mission-5", "ar-mission-6"
+    ];
+
+    // sec-15의 비디오 파일 배열
+    const sec15VideoFiles = [
+        "sec-15-video-1", "sec-15-video-2", "sec-15-video-3",
+        "sec-15-video-4"
+    ];
+
+    // sec-14__video-element 처리
+    function setupSec14Videos() {
+        const videoElements = document.querySelectorAll(".sec-14__video-element");
+
+        videoElements.forEach((videoElement, index) => {
+            if (index < sec14VideoFiles.length) { // sec14VideoFiles 배열 범위 내에 있는지 확인
+                const videoFileName = sec14VideoFiles[index];
+
+                if (isSafariOrIOS) {
+                    const gifElement = document.createElement("img");
+                    gifElement.src = `./assets/videos/${videoFileName}.gif`;
+                    gifElement.alt = `AR Mission GIF ${index + 1}`;
+                    gifElement.className = "sec-14__video-element";
+
+                    videoElement.parentNode.replaceChild(gifElement, videoElement);
+                    console.log(`Replaced video element in sec-14 with GIF for ${videoFileName}`);
+                } else {
+                    videoElement.src = `./assets/videos/${videoFileName}.webm`;
+                    videoElement.type = "video/webm";
+                    videoElement.load();
+                }
+            }
+        });
+    }
+
+    // sec-15__video 처리
+    function setupSec15Videos() {
+        const videoElements = document.querySelectorAll(".sec-15__video");
+
+        videoElements.forEach((videoElement, index) => {
+            if (index < sec15VideoFiles.length) { // sec15VideoFiles 배열 범위 내에 있는지 확인
+                const videoFileName = sec15VideoFiles[index];
+
+                if (isSafariOrIOS) {
+                    const gifElement = document.createElement("img");
+                    gifElement.src = `./assets/videos/${videoFileName}.gif`;
+                    gifElement.alt = `Section 15 Video GIF ${index + 1}`;
+                    gifElement.className = "sec-15__video";
+
+                    videoElement.parentNode.replaceChild(gifElement, videoElement);
+                    console.log(`Replaced video element in sec-15 with GIF for ${videoFileName}`);
+                } else {
+                    videoElement.src = `./assets/videos/${videoFileName}.webm`;
+                    videoElement.type = "video/webm";
+                    videoElement.load();
+                }
+            }
+        });
+    }
+
+    // 각 섹션 비디오 설정 함수 호출
+    setupSec14Videos();
+    setupSec15Videos();
+});
+
+// ========== gsap 애니메이션 효과 ==========
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Get the total number of wrappers
+    const totalPanels = document.querySelectorAll(".sec-14__wrapper").length;
+
+    // Create the horizontal scroll effect
+    const horizontalScroll = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#sec-14",
+            start: "top top",
+            end: () => `+=${document.querySelector('.sec-14__overflow-x').offsetWidth}`,
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true, // 화면 크기 변경 시 재계산
+            snap: {
+                snapTo: 1 / (totalPanels - 1),
+                duration: {
+                    min: 0.2,
+                    max: 0.3
+                },
+                ease: "power1.inOut"
+            }
+        }
+    });
+
+    // Animate the horizontal scrolling
+    horizontalScroll.to(".sec-14__overflow-x", {
+        x: () => -(document.querySelector('.sec-14__overflow-x').offsetWidth - window.innerWidth),
+        ease: "none"
+    });
 });
