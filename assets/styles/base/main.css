@@ -5,8 +5,7 @@
     --coralRedD: #cc5245;
     --ivory: #E7E6D2;
     --black: #121212;
-    --white-txt: #FDFCFC;
-    --white-bg: #F5F5F5;
+    --white: #FDFCFC;
 }
 
 *,
@@ -25,7 +24,7 @@ html {
 
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    background-color: var(--white-bg);
+    background-color: var(--white);
     overflow-x: hidden;
 }
 
@@ -76,7 +75,7 @@ textarea {
     font-size: 1rem;
     border: none;
     background-color: var(--coralRed);
-    color: var(--white-txt);
+    color: var(--white);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
@@ -97,7 +96,7 @@ textarea {
 
 /* 스크롤바의 트랙 설정 */
 ::-webkit-scrollbar-track {
-    background: var(--white-bg);
+    background: var(--white);
 }
 
 /* 스크롤바의 핸들 설정 */
@@ -117,7 +116,7 @@ textarea {
     max-width: 1920px;
     padding: 0 7.5%;
     margin: 0 auto;
-    background-color: var(--white-bg);
+    background-color: var(--white);
 }
 
 /* 미디어 쿼리 */

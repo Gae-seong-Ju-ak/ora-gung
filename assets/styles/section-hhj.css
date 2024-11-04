@@ -40,6 +40,12 @@
     top: 0;
 }
 
+.promotion-video {
+    width: 100%;
+    height: auto;
+    border-radius: 3.875rem;
+}
+
 /* 디자인 가이드 섹션 */
 
 .sec__09-design-guide{
@@ -389,7 +395,7 @@
 }
 
 .phone1 {
-	background-image: url(../images/mockup/on-boarding_1.svg);
+	background-image: url(../images/mockup/on-boarding_1.webp);
     background-size: cover;
     background-position: center center; /* 이미지가 가운데로 정렬됨 */
     background-repeat: no-repeat; /* 이미지 반복을 방지 */
@@ -398,26 +404,25 @@
     object-position: center; /* 이미지가 가운데로 정렬됨 */
 }
 .phone2 {
-	background-image: url(../images/mockup/on-boarding_2.svg);
+	background-image: url(../images/mockup/on-boarding_2.webp);
     background-size: cover;
     background-position: center center; /* 이미지가 가운데로 정렬됨 */
     background-repeat: no-repeat; /* 이미지 반복을 방지 */
-   
 }
 .phone3 {
-	background-image: url(../images/mockup/on-boarding_3.svg);
+	background-image: url(../images/mockup/on-boarding_3.webp);
     background-size: cover;
     background-position: center center; /* 이미지가 가운데로 정렬됨 */
     background-repeat: no-repeat; /* 이미지 반복을 방지 */
 }
 .phone4 {
-	background-image: url(../images/mockup/on-boarding_4.svg);
+	background-image: url(../images/mockup/on-boarding_4.webp);
     background-size: cover;
     background-position: center center; /* 이미지가 가운데로 정렬됨 */
     background-repeat: no-repeat; /* 이미지 반복을 방지 */
 }
 .phone5 {
-	background-image: url(../images/mockup/on-boarding_5.svg);
+	background-image: url(../images/mockup/on-boarding_5.webp);
     background-size: cover;
     background-position: center center; /* 이미지가 가운데로 정렬됨 */
     background-repeat: no-repeat; /* 이미지 반복을 방지 */
@@ -480,6 +485,7 @@
     position: relative;
     text-align: center;
     margin-bottom: 0;
+    background-color: var(--white);
 }
 
 .circle{

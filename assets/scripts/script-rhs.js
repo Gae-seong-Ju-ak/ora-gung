@@ -547,34 +547,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the total number of wrappers
     const totalPanels = document.querySelectorAll(".sec-14__wrapper").length;
+    const overflowElement = document.querySelector('.sec-14__overflow-x');
 
     // Create the horizontal scroll effect
     const horizontalScroll = gsap.timeline({
         scrollTrigger: {
             trigger: "#sec-14",
             start: "top top",
-            end: () => `+=${document.querySelector('.sec-14__overflow-x').offsetWidth}`,
-            scrub: 1,
+            end: () => `+=${overflowElement.offsetWidth}`,
+            scrub: 1.5, // 스크롤 감도 조정
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true, // 화면 크기 변경 시 재계산
             snap: {
-                snapTo: 1 / (totalPanels - 1),
+                snapTo: 1 / (totalPanels - 1), // 각 패널에 맞춰 스냅
                 duration: {
-                    min: 0.2,
-                    max: 0.3
+                    min: 0.4, // 스냅 애니메이션 최소 지속 시간
+                    max: 0.6  // 스냅 애니메이션 최대 지속 시간
                 },
-                ease: "power1.inOut"
+                ease: "power2.inOut", // 스냅 애니메이션의 부드러운 가속/감속
+                onComplete: pauseScroll // 스냅 완료 시 스크롤 잠시 멈춤
             }
         }
     });
 
     // Animate the horizontal scrolling
     horizontalScroll.to(".sec-14__overflow-x", {
-        x: () => -(document.querySelector('.sec-14__overflow-x').offsetWidth - window.innerWidth),
+        x: () => -(overflowElement.offsetWidth - window.innerWidth),
         ease: "none"
     });
+
+    // 스크롤을 잠시 멈추는 함수
+    function pauseScroll() {
+        const scrollTriggerInstance = horizontalScroll.scrollTrigger;
+
+        scrollTriggerInstance.disable(); // 스크롤 잠시 비활성화
+        setTimeout(() => {
+            scrollTriggerInstance.enable(); // 1초 후 스크롤 다시 활성화
+        }, 1000); // 1초(1000ms) 동안 스크롤 멈춤
+    }
 });
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Intersection Observer 설정
@@ -593,6 +610,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }, observerOptions);
 
     // sec-18__headline 및 sec-18__description 요소 관찰 시작
-    const elementsToObserve = document.querySelectorAll(".sec-18__headline, .sec-18__description, .sec-18__image-secondary img, .sec-15__child");
+    const elementsToObserve = document.querySelectorAll(
+    ".sec-18__headline, .sec-18__description, .sec-18__image-secondary img, .sec-11__main-mockup-1a, .sec-11__main-mockup-1c, .sec-11__main-mockup-2b, .sec-11__main-mockup-1, .sec-11__main-mockup-2"
+);
     elementsToObserve.forEach(element => observer.observe(element));
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 모든 카드 요소를 선택
+    const cards = document.querySelectorAll(".sec-13__card");
+    let activeCard = null; // 현재 활성화된 카드 추적
+
+    cards.forEach(card => {
+        // 각 카드를 클릭했을 때의 동작
+        card.addEventListener("click", function(event) {
+            event.stopPropagation(); // 클릭 이벤트가 부모로 전파되는 것을 막음
+
+            // 현재 카드가 이미 활성화된 상태라면 비활성화
+            if (activeCard === card) {
+                card.classList.remove("active");
+                activeCard = null;
+            } else {
+                // 다른 카드가 활성화되어 있는 경우 해당 카드를 비활성화
+                if (activeCard) {
+                    activeCard.classList.remove("active");
+                }
+                // 현재 클릭한 카드 활성화
+                card.classList.add("active");
+                activeCard = card;
+            }
+        });
+    });
+
+    // 카드 범위 밖을 클릭하면 활성화된 카드 비활성화
+    document.addEventListener("click", function() {
+        if (activeCard) {
+            activeCard.classList.remove("active");
+            activeCard = null;
+        }
+    });
 });
