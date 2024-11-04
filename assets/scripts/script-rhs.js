@@ -194,7 +194,7 @@ class Carousel {
     setInitialPosition() {
         const viewportWidth = window.innerWidth;
         // 예: 1920px 화면에서 1222px이 중앙이라면, 약 64%의 위치
-        const centerRatio = 0.53; // (1222/1920 ≈ 0.64)
+        const centerRatio = 0.64; // (1222/1920 ≈ 0.64)
         
         const centerPosition = viewportWidth * centerRatio;
         
@@ -574,4 +574,25 @@ document.addEventListener("DOMContentLoaded", function () {
         x: () => -(document.querySelector('.sec-14__overflow-x').offsetWidth - window.innerWidth),
         ease: "none"
     });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Intersection Observer 설정
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+            } else {
+                entry.target.classList.remove("fade-in");
+            }
+        });
+    }, observerOptions);
+
+    // sec-18__headline 및 sec-18__description 요소 관찰 시작
+    const elementsToObserve = document.querySelectorAll(".sec-18__headline, .sec-18__description, .sec-18__image-secondary img, .sec-15__child");
+    elementsToObserve.forEach(element => observer.observe(element));
 });
