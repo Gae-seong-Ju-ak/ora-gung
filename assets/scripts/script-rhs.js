@@ -458,3 +458,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+// 첫 번째 슬라이드쇼 인스턴스
+const slideshow1 = new ImageSlideshow({
+    images: [
+        './assets/images/mockup/hanbok-1.webp',
+        './assets/images/mockup/hanbok-2.webp',
+        './assets/images/mockup/hanbok-3.webp'
+    ],
+    interval: 2000,
+    img1Selector: '#slideshow1 .img1',
+    img2Selector: '#slideshow1 .img2'
+});
+
+// 두 번째 슬라이드쇼 인스턴스
+const slideshow2 = new ImageSlideshow({
+    images: [
+        './assets/images/mockup/hanbok-a.webp',
+        './assets/images/mockup/hanbok-b.webp'
+    ],
+    interval: 2000,
+    img1Selector: '#slideshow2 .img1',
+    img2Selector: '#slideshow2 .img2'
+});
+
+// 슬라이드쇼 시작
+slideshow1.start();
+slideshow2.start();
+
+// 페이지 가시성 변경 감지
+document.addEventListener('visibilitychange', () => {
+    slideshow1.handleVisibilityChange();
+    slideshow2.handleVisibilityChange();
+});
