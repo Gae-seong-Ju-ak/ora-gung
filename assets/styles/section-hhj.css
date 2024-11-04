@@ -1145,7 +1145,7 @@
     color: #fff;
  }
  .sec__05-circle-keyword-wrap{
-    margin-top: 5.063rem;
+    margin-top: 3rem;
     display: flex;
     gap: 2em;
 	justify-content:center;
@@ -1187,7 +1187,7 @@
  }
 
  .sec__05-rolling-wrap{
-    margin-top: 15.938rem;
+    margin-top: 10rem;
     display: flex;
     overflow: hidden;
     width: 100vw;
@@ -1283,7 +1283,7 @@
 
 .sec-05__images {
     position: absolute;
-    top: 70%; 
+    top: 62%; 
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20em;
