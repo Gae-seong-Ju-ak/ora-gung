@@ -1,0 +1,204 @@
+footer {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    /* height: 27.688rem; */
+    height: auto;
+    padding: 3.5rem;
+    background-color: #232323;
+    /* border-radius: 3.125rem 3.125rem 0 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--white);
+    padding-left: 8px;
+}
+
+/* 브랜드 로고 및 설명 */
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer__logo {
+    width: 8.522rem;
+    height: auto;
+    margin-bottom: 1.25rem;
+}
+
+.footer__brand-text {
+    font-size: 1.563rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.footer__brand-subtext {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 3.031rem;
+    white-space: nowrap;
+}
+
+
+.footer__button {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1.25rem;
+    text-decoration: none;
+}
+
+.footer__icon-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 3.031rem;
+}
+
+.footer__icon-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    height: auto;
+    line-height: 0;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer__icon-link:hover {
+    opacity: 0.7;
+}
+
+.footer__icon {
+    width: 100%;
+}
+
+.footer__copyright {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+}
+
+.footer__source {
+    font-size: 0.5rem;
+    font-weight: 200;
+    line-height: 1.5;
+}
+.footer__team {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 1.938rem;
+}
+
+.footer__team-title {
+    font-size: 2.125rem;
+    font-weight: 700;
+
+}
+.footer__member-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.375rem;
+    margin-bottom: 1.25rem;
+    align-items: stretch;
+}
+
+.footer__role {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+    width: max-content;
+    padding-right: 2.5rem;
+    border-right: 1px solid var(--white);
+}
+
+.footer__role:last-child {
+    border-right: none; /* 마지막 요소의 세로선 제거 */
+}
+
+.footer__role-title {
+    font-size: 1.563rem;
+    font-weight: 600;
+    margin-bottom: 2.188rem;
+}
+
+.footer__member {
+    font-size: 1.125rem;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 2.188rem;
+}
+
+.footer__member-name {
+    display: inline-block;
+    margin-bottom: 0.469rem;
+}
+
+@media screen and (max-width: 415px) {
+    .footer__member-wrap {
+        gap: 2.125rem;
+    }
+
+    .footer__role {
+        padding-right: 1.063rem;
+    }
+
+    .footer__role-title {
+        font-size: 1.063rem;
+        margin-bottom: 1.594rem;
+    }
+
+    .footer__member {
+        font-size: 0.85rem;
+        margin-bottom: 1.594rem;
+    }
+
+    .footer__member-name {
+        margin-bottom: 0.266rem;
+    }
+
+    .footer__brand-text {
+        font-size: 1.063rem;
+        margin-bottom: 1.063rem;
+    }
+
+    .footer__brand-subtext {
+        font-size: 0.638rem;
+        margin-bottom: 2.125rem;
+    }
+
+    .footer__button {
+        padding: 0.531rem 0.656rem;
+        font-size: 0.738rem;
+        margin-bottom: 1.063rem;
+    }
+
+    .footer__icon-wrapper {
+        margin-bottom: 2.125rem;
+    }
+
+    .footer__icon-link {
+        width: 2.078rem;
+        height: 2.078rem;
+    }
+}
