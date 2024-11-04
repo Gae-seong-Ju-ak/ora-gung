@@ -102,17 +102,46 @@
     width: 20.625rem;
     height: 45.625rem;
     z-index: 1;
-    transform: translateX(-9rem);
+    opacity: 0;
+    transform: translateX(-6rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
     background-image: url(../images/mockup/sec-11-main-mockup-1a.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.sec-11__main-mockup-1.fade-in {
+    opacity: 1;
+    transform: translateX(-9rem);
+}
+
+
+
 .sec-11__main-mockup-1a {
     width: 19.063rem;
     height: auto;
-    transform: translateX(-14.5rem) translateY(-7.5rem);
+    opacity: 0;
+    transform: translateX(-14.5rem) translateY(0) scale(0.8);
+    transition: all 0.6s ease;
+}
+
+.sec-11__main-mockup-1a.fade-in {
+    opacity: 1;
+    transform: translateX(-14.5rem) translateY(-7.5rem) scale(1);
+}
+
+.sec-11__main-mockup-1c {
+    width: 21.938rem;
+    opacity: 0;
+    height: auto;
+    transform: translateX(14rem) translateY(2rem);
+    transition: all 0.6s ease;
+}
+
+.sec-11__main-mockup-1c.fade-in {
+    opacity: 1;
+    transform: translateX(14rem) translateY(0);
 }
 
 .sec-11__main-mockup-2 {
@@ -123,27 +152,38 @@
     width: 30.438rem;
     height: 46.625rem;
     z-index: 1;
-    transform: translateX(9rem) translateY(2rem);
-    transition: width 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateX(7rem) translateY(2rem);
+    transition: all 0.6s ease;
     background-image: url(../images/mockup/sec-11-main-mockup-2a.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.sec-11__main-mockup-2.fade-in {
+    opacity: 1;
+    transform: translateX(9rem);
+}
+
 .sec-11__main-mockup-2a {
-    width: 21.938rem;
+    width: 100%;
     height: auto;
     transform: translateX(14rem);
 }
 
 .sec-11__main-mockup-2b {
-    width: 18.813rem;
+    width: 100%;
     height: auto;
-    transform: translateX(14rem) translateY(2rem);
+    opacity: 0;
+    transform: translateX(14rem) translateY(0);
+    transition: all 0.6s ease;
 }
 
-
+.sec-11__main-mockup-2b.fade-in {
+    opacity: 1;
+    transform: translateX(14rem) translateY(2rem);
+}
 
 @media screen and (max-width: 415px) {
     .sec-11__main-mockup-2 {
@@ -252,8 +292,8 @@
 }
 
 .sec-12__carousel-image {
-    width: 47.375rem;
-    height: auto;
+    width: auto;
+    height: 22.5rem;
     margin-bottom: 1.563rem;
     display: flex;
     justify-content: center;
@@ -261,8 +301,8 @@
 }
 
 .sec-12__carousel-image img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
 }
 
 .sec-12__carousel-text {
@@ -1298,6 +1338,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0 !important;
 }
 
 .sec-20__img {
