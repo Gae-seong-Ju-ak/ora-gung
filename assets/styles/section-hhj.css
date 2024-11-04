@@ -1276,10 +1276,33 @@
 
     display: inline-block;
     
-
 }
 .sec__05-rolling-phone img{
     width: 20.659rem;
+}
+
+.sec-05__images {
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20em;
+    height: auto;
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.sec-05__image {
+    grid-area: stack;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 1;
+}
+
+.sec-05__image.active {
+    opacity: 1;
 }
 
 /*  */
