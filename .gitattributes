@@ -1,0 +1,3 @@
+assets/videos/*.gif -filter=lfs -diff -merge
+assets/videos/*.mp4 -filter=lfs -diff -merge
+assets/videos/*.webm -filter=lfs -diff -merge
