@@ -1,79 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive Sticker Board</title>
     <style>
-        /* 전체 화면 가운데에 비디오를 배치 */
-        body, html {
-            width: 100vw;
+        body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #fff;
+            font-family: Arial, sans-serif;
         }
 
-        /* 비디오 스타일 */
-        #myVideo {
-            width: 100.625rem;
-            height: auto;
-            border-radius: 20px;
-            display: block;
+        .sticker-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .sticker {
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sticker-red {
+            background-color: #ff6666;
+        }
+
+        .sticker-blue {
+            background-color: #6699ff;
+        }
+
+        .sticker-green {
+            background-color: #66cc66;
+        }
+
+        .drop-zone {
+            width: 80%;
+            height: 400px;
+            border: 2px dashed #ccc;
             position: relative;
+            overflow: hidden;
         }
 
-        /* 비디오 재생 버튼 */
-        .play-button {
+        .sticker-in-zone {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.7);
+            cursor: move;
+            padding: 5px;
+            user-select: none;
+        }
+
+        .resize-handle,
+        .rotate-handle {
+            width: 10px;
+            height: 10px;
+            background-color: #666;
+            position: absolute;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .resize-handle {
+            right: -5px;
+            bottom: -5px;
+            cursor: se-resize;
+        }
+
+        .rotate-handle {
+            left: -5px;
+            top: -5px;
+            cursor: grab;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            color: white;
             border: none;
             border-radius: 50%;
+            font-size: 12px;
             cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            color: #000;
-            transition: background-color 0.3s ease;
-            z-index: 1;
-        }
-
-        .play-button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
         }
     </style>
 </head>
+
 <body>
-
-    <div id="videoContainer" style="position: relative;">
-        <video id="myVideo" src="./assets/videos/exaple-video.mp4"></video>
-        <button class="play-button" id="playButton">▶</button>
+    <div class="sticker-container">
+        <div class="sticker sticker-red" draggable="true">Sticker 1</div>
+        <div class="sticker sticker-blue" draggable="true">Sticker 2</div>
+        <div class="sticker sticker-green" draggable="true">Sticker 3</div>
     </div>
+    <div class="drop-zone" id="dropZone"></div>
+    <button id="saveButton">Save as Image</button>
 
+    <!-- Include jQuery and html2canvas -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        // 비디오 컨테이너와 재생 버튼, 비디오 요소 가져오기
-        const videoContainer = document.getElementById("videoContainer");
-        const playButton = document.getElementById("playButton");
-        const video = document.getElementById("myVideo");
+        $(document).ready(function () {
+            const dropZone = $("#dropZone");
+            let draggedSticker = null;
 
-        // 화면 클릭 시 비디오 재생/일시 정지 및 버튼 표시/숨기기
-        videoContainer.addEventListener("click", function () {
-            if (video.paused) {
-                video.play();
-                playButton.style.display = "none"; // 재생 중일 때 버튼 숨김
-            } else {
-                video.pause();
-                playButton.style.display = "flex"; // 일시 정지 중일 때 버튼 표시
+            $(".sticker").on("dragstart", function (e) {
+                draggedSticker = $(this).clone().removeClass("sticker").addClass("sticker-in-zone");
+                // Set a transparent image to prevent enlargement
+                const transparentImg = new Image();
+                transparentImg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgAB/gaEX6cAAAAASUVORK5CYII=";
+                e.originalEvent.dataTransfer.setDragImage(transparentImg, 0, 0);
+            });
+
+            // Drop Zone: Only accept drops within this element
+            dropZone.on("dragover", function (e) {
+                e.preventDefault(); // Allows drop
+            });
+
+            dropZone.on("drop", function (e) {
+                e.preventDefault();
+                if (draggedSticker) {
+                    const zoneOffset = dropZone.offset();
+                    const mouseX = e.originalEvent.clientX;
+                    const mouseY = e.originalEvent.clientY;
+
+                    // Ensure drop happens only within drop-zone boundaries
+                    if (mouseX >= zoneOffset.left && mouseX <= zoneOffset.left + dropZone.width() &&
+                        mouseY >= zoneOffset.top && mouseY <= zoneOffset.top + dropZone.height()) {
+                        draggedSticker.css({
+                            top: mouseY - zoneOffset.top - draggedSticker.height() / 2 + "px",
+                            left: mouseX - zoneOffset.left - draggedSticker.width() / 2 + "px"
+                        });
+
+                        addControls(draggedSticker);
+                        dropZone.append(draggedSticker);
+                    }
+                    draggedSticker = null;
+                }
+            });
+
+            function addControls(sticker) {
+                const resizeHandle = $("<div>").addClass("resize-handle");
+                sticker.append(resizeHandle);
+
+                const rotateHandle = $("<div>").addClass("rotate-handle");
+                sticker.append(rotateHandle);
+
+                const deleteButton = $("<button>").text("×").addClass("delete-btn");
+                deleteButton.on("click", function () {
+                    sticker.remove();
+                });
+                sticker.append(deleteButton);
+
+                let startX, startY, startWidth, startHeight;
+                resizeHandle.on("mousedown", function (e) {
+                    e.preventDefault();
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startWidth = sticker.width();
+                    startHeight = sticker.height();
+                    $(document).on("mousemove", resizeSticker);
+                    $(document).on("mouseup", stopResize);
+                });
+
+                function resizeSticker(e) {
+                    const delta = e.clientX - startX;
+                    const newSize = Math.max(50, startWidth + delta);
+                    sticker.css({ width: newSize + "px", height: newSize + "px" });
+                }
+
+                function stopResize() {
+                    $(document).off("mousemove", resizeSticker);
+                    $(document).off("mouseup", stopResize);
+                }
+
+                let currentRotation = 0;
+                rotateHandle.on("mousedown", function (e) {
+                    e.preventDefault();
+                    const centerX = sticker.offset().left + sticker.width() / 2;
+                    const centerY = sticker.offset().top + sticker.height() / 2;
+                    const startAngle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+
+                    $(document).on("mousemove", function rotateSticker(e) {
+                        const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+                        const rotation = (angle - startAngle) * (180 / Math.PI) + currentRotation;
+                        sticker.css("transform", `rotate(${rotation}deg)`);
+                    });
+
+                    $(document).on("mouseup", function () {
+                        currentRotation += parseFloat(sticker.css("transform").split("(")[1].split("deg")[0]) || 0;
+                        $(document).off("mousemove rotateSticker");
+                    });
+                });
             }
+
+            $("#saveButton").on("click", function () {
+                html2canvas(dropZone[0]).then(canvas => {
+                    const link = document.createElement("a");
+                    link.download = "sticker_board.png";
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            });
         });
     </script>
 </body>
+
 </html>
