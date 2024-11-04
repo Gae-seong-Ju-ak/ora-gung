@@ -43,10 +43,26 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 stampItems.forEach((item, index) => {
+    // p 태그 동적 생성 및 스타일링
+    let pElement = document.createElement('p');
+    pElement.textContent = `Step 1`; // 초기 텍스트 설정
+    pElement.classList.add('dynamic-text'); // 고유 클래스 추가
+    pElement.style.position = 'absolute';
+    pElement.style.top = '3rem';
+    pElement.style.color = '#00A695';
+    pElement.style.textAlign = 'center';
+    pElement.style.fontSize = '1.5rem';
+    pElement.style.fontWeight = '500';
+    pElement.style.width = '100%';
+    item.appendChild(pElement);
+
+    // 이미지 요소 생성
     let imgElement = document.createElement('img');
     imgElement.src = images[index][0];
     imgElement.alt = `Image ${index + 1}-1`;
     item.appendChild(imgElement);
+
+    // 관찰 시작
     observer.observe(item);
 });
 
@@ -55,8 +71,15 @@ function startImageTransition() {
     intervalId = setInterval(() => {
         stampItems.forEach((item, index) => {
             const imgElement = item.querySelector('img');
+            const pElement = item.querySelector('.dynamic-text'); // 동적으로 생성된 p 태그만 선택
+
+            // 이미지 변경
             imgElement.src = images[index][currentImageIndex];
             imgElement.alt = `Image ${index + 1}-${currentImageIndex + 1}`;
+
+            // 동적 p 태그의 내용 업데이트
+            pElement.textContent = `Step ${currentImageIndex + 1}`;
+
         });
         currentImageIndex = (currentImageIndex + 1) % images[0].length;
     }, 1200);

@@ -414,9 +414,8 @@
     flex-grow: 1;
     display: flex;
     align-self: stretch;
-    transform: scaleY(1.5);
+    transform: scaleY(1.6);
     transform-origin: bottom;
-    margin-bottom: -2rem;
 }
 
 .sec-12__ai-img-container-2 {
@@ -465,6 +464,7 @@
 }
 
 .sec-13__wrapper {
+    position: relative;
     width: 100%;
     padding: 0 7.5%;
 }
@@ -504,7 +504,31 @@
     align-items: center;
     justify-content: center;
     gap: 2.875rem;
-    margin-bottom: 25.313rem;
+    margin-bottom: 28.5rem;
+}
+
+.ar-line {
+    position: absolute;
+    top: 31%;
+    left: 13%;
+    width: 100%;
+    margin-top: -6rem;
+}
+
+.ar-line__line {
+    width: 26rem;
+}
+
+.ar-line-2 {
+    position: absolute;
+    bottom: 31%;
+    left: 13%;
+    width: 100%;
+    margin-top: -6rem;
+}
+
+.ar-line__line-2 {
+    width: 16rem;
 }
 
 .sec-13__card {
