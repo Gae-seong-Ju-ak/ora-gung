@@ -1,3 +1,9 @@
 assets/videos/*.gif -filter=lfs -diff -merge
 assets/videos/*.mp4 -filter=lfs -diff -merge
 assets/videos/*.webm -filter=lfs -diff -merge
+트랙 filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+\# filter=lfs diff=lfs merge=lfs -text
+필요한 filter=lfs diff=lfs merge=lfs -text
+확장자를 filter=lfs diff=lfs merge=lfs -text
+LFS로 filter=lfs diff=lfs merge=lfs -text
