@@ -194,7 +194,7 @@ class Carousel {
     setInitialPosition() {
         const viewportWidth = window.innerWidth;
         // 예: 1920px 화면에서 1222px이 중앙이라면, 약 64%의 위치
-        const centerRatio = 0.53; // (1222/1920 ≈ 0.64)
+        const centerRatio = 0.64; // (1222/1920 ≈ 0.64)
         
         const centerPosition = viewportWidth * centerRatio;
         
