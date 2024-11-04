@@ -289,10 +289,9 @@
 }
 
 .sec__10-spacer {
-    padding-top: 18.813rem;
+    padding-top: 5rem;
 	width:100%;
     height: 0%;
-    margin-bottom: 8rem;
 }
 
 .sec__10-phone{
@@ -598,7 +597,8 @@
 
 .sec__02-wrap{
     position: relative;
-    margin-bottom: 30rem;
+    margin-bottom: 10rem;
+    height: 100%;
 }
 .sec__02-top-title{
     font-size: 1.25rem;
@@ -618,12 +618,12 @@
 }
 .sec__02-text{
     font-size: 1.313rem;
-    line-height: 160%;
+    line-height: 130%;
 
 }
 
  .sec__02-left-answer{
-    margin-top: 9.563rem;
+    margin-top: 5rem;
     width: 29.006rem;
     height: 10.511rem;
     border-radius: 1.938rem;
@@ -639,20 +639,20 @@
  }
 
  .sec__02-key{
-    width: 35.9rem;
-    height: 29.484rem;
-    border-radius: 3.413rem;
+    width: 29.006rem;
+    height: 10.511rem;
+    border-radius: 1.938rem;
     background-color: #01A695;
+    transform: translate(0, -180%);
 
-    max-width: 1920px;
-    padding: 2% 3%;
+    margin-left: auto; /* float 대신 사용 */
 
-    position: absolute;
-    left: 60%;
-    top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
 
- .sec__02-key-circle{
+ /* .sec__02-key-circle{
     width: 5.107rem;
     height: 5.107rem;
     border-radius: 100%;
@@ -666,24 +666,20 @@
     text-align: center;
     display: block;
     width: 3.066rem;
- }
+ } */
 
  .sec__02-key-text{
-    text-align: left;
-    float: right;
-    margin-right: 5%;
-    font-size: 1.313rem;
+    text-align: center;
     color: #fff;
  }
- .sec__02-key-text h2{
+ /* .sec__02-key-text h2{
     margin-bottom: 2.625rem;
     font-size: 1.875rem;
     font-weight: 600;
     
- }
+ } */
  .sec__02-key-text p{
     line-height: 130%;
-    font-weight: 300;
     
  }
 
@@ -700,15 +696,15 @@
     align-items: center;
     margin: 0;
     min-height: 100%;
+    transform: translate(0, -50%);
 
-    margin-top: 12rem;
 }
 .perspective {
     position: relative;
     perspective-origin: bottom;
     transform: translateY(4.688rem) rotateX(60deg) rotateZ(45deg);
     transform-style: preserve-3d;
-    width: 24rem;
+    width: 20rem;
     height: 18.75rem;
     background-color: #c4eee9;
 
@@ -716,7 +712,7 @@
 
 }
 .cube {
-    width: 12rem;
+    width: 10rem;
     position: absolute;
     transform: rotateX(-90deg);
     transform-origin: bottom left;
@@ -735,16 +731,16 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(150, 150, 150, 0.1));
     position: absolute;
     transform: rotateY(90deg) rotateX(90deg);
-    width: 12rem;
-    height: 12rem;
-    top: -12rem;
-    left: 12rem;
+    width: 10rem;
+    height: 10rem;
+    top: -10rem;
+    left: 10rem;
     transform-origin: bottom left;
    
 }
 .cube:after {
     background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2));
-    width: 12rem;
+    width: 10rem;
     height: 100%;
     transform: rotateY(90deg);
     transform-origin: bottom left;
@@ -752,10 +748,10 @@
 }
 .cube--a,
 .cube--b {
-    bottom: 12.5rem;
+    bottom: 10rem;
 }
 .cube--b {
-    left: 12rem;
+    left: 10rem;
 }
 .cube--a { background-color: var(--tealGreen);}
 .cube--b { background-color: #E6F4F3;}
@@ -780,23 +776,23 @@
 
 
 
- .sec__02-right-answer{
-    margin-top: 9.563rem;
-    width: 29.006rem;
-    height: 10.511rem;
-    border-radius: 1.938rem;
-    background-color: #01A695;
-    float: right;
+    .sec__02-right-answer{
+        width: 29.006rem;
+        height: 10.511rem;
+        border-radius: 1.938rem;
+        background-color: #01A695;
 
+        margin-left: auto; /* float 대신 사용 */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .sec__02-right-answer>p{
-    text-align: center;
-    color: #fff;
- }
+        transform: translate(0,-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sec__02-right-answer>p{
+        text-align: center;
+        color: #fff;
+    }
 
  /* sec__03 */
 
@@ -820,10 +816,12 @@
 
 
  .sec__03-spacer {
-    padding-top: 18.813rem;
+    padding-top: 5rem;
 	width:100%;
     height: 0%;
-    margin-bottom: 16rem;
+}
+ .sec__03-spacer:last-child{
+    margin-bottom: 0rem !important; 
 }
  .sec__03-spacer h2{
     font-size: 1.5rem;

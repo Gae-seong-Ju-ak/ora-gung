@@ -196,7 +196,7 @@ details.forEach((detail, index)=> {
 // ===유저 데스크 원 스크롤 티거 ===
 
 gsap.fromTo(".moving-circle", 
-  { strokeDasharray: 500, strokeDashoffset: 500 },  
+  { strokeDasharray: 600, strokeDashoffset: 600 },  
   {
     strokeDashoffset: 0,  
     scrollTrigger: {
@@ -212,14 +212,14 @@ gsap.fromTo(".moving-circle",
 
 
 
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 1000,
-    loop: true,
-    pagination: {
-      clickable: true,
-    },
-  });
+
+var swiper1 = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 1000,
+  loop: true,
+});
+
+
 
 
 
@@ -256,3 +256,5 @@ mm.add("(min-width: 600px)", () => {
 	})
   })
 })
+
+
