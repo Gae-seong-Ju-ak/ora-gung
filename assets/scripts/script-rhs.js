@@ -220,6 +220,28 @@ document.addEventListener('visibilitychange', () => {
 // ========== 이미지 변경 스크립트 (AR 가이드 적용) ==========
 
 
+// ========== 이미지 변경 스크립트 (섹션 3 적용) ==========
+
+const sec5Slideshow = new ImageSlideshow({
+    images: [
+        './assets/images/mockup/sec-05-mockup-1.webp',
+        './assets/images/mockup/sec-05-mockup-2.webp',
+        './assets/images/mockup/sec-05-mockup-3.webp',
+    ],
+    interval: 2000,
+    img1Selector: '.sec-05__image.img1',
+    img2Selector: '.sec-05__image.img2'
+});
+
+// 슬라이드쇼 시작
+sec5Slideshow.start();
+
+// 페이지 가시성 변경 감지
+document.addEventListener('visibilitychange', () => {
+    sec5Slideshow.handleVisibilityChange();
+});
+
+
 // ========== 미션 카드 회전 효과  ==========
 
 // 미션 카드 요소 선택
@@ -336,53 +358,34 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSec15Videos();
 });
 
-// ========== gsap 애니메이션 효과 ==========
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Get the total number of wrappers
     const totalPanels = document.querySelectorAll(".sec-14__wrapper").length;
     const overflowElement = document.querySelector('.sec-14__overflow-x');
 
-    // Create the horizontal scroll effect
     const horizontalScroll = gsap.timeline({
         scrollTrigger: {
             trigger: "#sec-14",
             start: "top top",
-            end: () => `+=${overflowElement.offsetWidth}`,
-            scrub: 1.5, // 스크롤 감도 조정
+            end: () => `+=${overflowElement.offsetWidth - window.innerWidth}`,
+            scrub: 3,
             pin: true,
             anticipatePin: 1,
-            invalidateOnRefresh: true, // 화면 크기 변경 시 재계산
             snap: {
-                snapTo: 1 / (totalPanels - 1), // 각 패널에 맞춰 스냅
-                duration: {
-                    min: 0.4, // 스냅 애니메이션 최소 지속 시간
-                    max: 0.6  // 스냅 애니메이션 최대 지속 시간
-                },
-                ease: "power2.inOut", // 스냅 애니메이션의 부드러운 가속/감속
-                onComplete: pauseScroll // 스냅 완료 시 스크롤 잠시 멈춤
-            }
+                snapTo: 1 / (totalPanels - 1),
+                duration: { min: 0.4, max: 0.6 },
+                ease: "power2.inOut"
+            },
+            // invalidateOnRefresh를 false로 설정
+            invalidateOnRefresh: false
         }
     });
 
-    // Animate the horizontal scrolling
     horizontalScroll.to(".sec-14__overflow-x", {
         x: () => -(overflowElement.offsetWidth - window.innerWidth),
         ease: "none"
     });
-
-    // 스크롤을 잠시 멈추는 함수
-    function pauseScroll() {
-        const scrollTriggerInstance = horizontalScroll.scrollTrigger;
-
-        scrollTriggerInstance.disable(); // 스크롤 잠시 비활성화
-        setTimeout(() => {
-            scrollTriggerInstance.enable(); // 1초 후 스크롤 다시 활성화
-        }, 1000); // 1초(1000ms) 동안 스크롤 멈춤
-    }
 });
 
 

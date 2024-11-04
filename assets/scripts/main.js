@@ -84,6 +84,27 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav__link");
+    const OFFSET = 100; // 원하는 상단 여백 높이 (px)
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // 기본 링크 동작을 막음
+            const targetId = this.getAttribute("href").substring(1); // 링크된 섹션 ID
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - OFFSET, // OFFSET만큼 더 위로 스크롤
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+
 // ========== 푸터 스크립트 ==========
 document.addEventListener("DOMContentLoaded", () => {
     const footerText = document.querySelector(".footer__brand-subtext");
