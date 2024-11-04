@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 화면 가운데에 비디오를 배치 */
+        body, html {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        /* 비디오 스타일 */
+        #myVideo {
+            width: 100.625rem;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            position: relative;
+        }
+
+        /* 비디오 재생 버튼 */
+        .play-button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #000;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+
+        .play-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="videoContainer" style="position: relative;">
+        <video id="myVideo" src="./assets/videos/exaple-video.mp4"></video>
+        <button class="play-button" id="playButton">▶</button>
+    </div>
+
+    <script>
+        // 비디오 컨테이너와 재생 버튼, 비디오 요소 가져오기
+        const videoContainer = document.getElementById("videoContainer");
+        const playButton = document.getElementById("playButton");
+        const video = document.getElementById("myVideo");
+
+        // 화면 클릭 시 비디오 재생/일시 정지 및 버튼 표시/숨기기
+        videoContainer.addEventListener("click", function () {
+            if (video.paused) {
+                video.play();
+                playButton.style.display = "none"; // 재생 중일 때 버튼 숨김
+            } else {
+                video.pause();
+                playButton.style.display = "flex"; // 일시 정지 중일 때 버튼 표시
+            }
+        });
+    </script>
+</body>
+</html>
