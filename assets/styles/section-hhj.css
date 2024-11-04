@@ -1296,14 +1296,14 @@
     grid-area: stack;
     width: 100%;
     height: auto;
-    opacity: 1;
-    transition: opacity 1s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     z-index: 1;
 }
 
 .sec-05__image.active {
     opacity: 1;
-}
+}ㅂ
 
 /*  */
 

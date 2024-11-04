@@ -1111,17 +1111,29 @@
     margin-bottom: 3.75rem;
 }
 
-.sec-17__feature-image {
+.sec-17__feature-images {
     width: 25.125rem;
     height: auto;
-    opacity: 0;
-    transform: translateY(2.5rem); /* 아래에서 위로 올라오는 효과 */
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.sec-17__feature-image {
+    grid-area: stack;
+    width: 100%;
+    height: auto;
+    opacity: 0; /* 투명도 0으로 설정 */
+    transform: translateY(8rem); /* 아래에서 위로 올라오는 효과 */
     transition: opacity 1s ease, transform 1s ease; /* 트랜지션 설정 */
+    z-index: 1;
+}
+
+.sec-17__feature-image.active {
+    opacity: 1; /* 투명도 1로 설정 */
 }
 
 /* fade-in 클래스가 추가되면 나타나도록 설정 */
 .sec-17__feature-image.fade-in {
-    opacity: 1;
     transform: translateY(0); /* 제자리 위치 */
 }
 
