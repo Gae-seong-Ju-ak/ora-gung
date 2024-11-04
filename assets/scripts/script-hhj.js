@@ -212,7 +212,47 @@ gsap.fromTo(".moving-circle",
 
 
 
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 1000,
+    loop: true,
+    pagination: {
+      clickable: true,
+    },
+  });
 
 
 
+  // 기존 클래스 이름을 다른 이름으로 교체
+const detailsNew = gsap.utils.toArray(".sec__10-content-box:not(:first-child)")
+const photosNew = gsap.utils.toArray(".sec__10-desktopPhoto:not(:first-child)")
 
+gsap.set(photosNew, {yPercent:101})
+
+const allPhotosNew = gsap.utils.toArray(".sec__10-desktopPhoto")
+
+mm.add("(min-width: 600px)", () => {
+
+  ScrollTrigger.create({
+	trigger:".sec__10-phone",  // 새로운 트리거 섹션
+	start:"top top",
+	end:"bottom bottom",
+	pin:".sec__10-right"     // 새로 고정할 요소
+  })
+
+  detailsNew.forEach((detail, index)=> {
+
+	let headline = detail.querySelector(".sec__10-content-box h3") 
+	let animation = gsap.timeline()
+	   .to(photosNew[index], {yPercent:0})
+	   .set(allPhotosNew[index], {autoAlpha:0})
+	ScrollTrigger.create({
+		trigger:headline,
+		start:"top 80%",
+		end:"top 50%",
+		animation:animation,
+		scrub:true,
+		markers:false
+	})
+  })
+})

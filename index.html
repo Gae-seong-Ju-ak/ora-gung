@@ -44,6 +44,9 @@
     <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
 
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <!-- Scripts -->
 
     <!-- Alternate language versions -->
@@ -151,7 +154,7 @@
                         통계를 낼 수 있었습니다.
                     </p>
     
-                    <div class="sec__02-left-answer">
+                    <div class="sec__02-left-answer fade-wrap">
                         <p>
                             가족끼리 갔는데, 글로만 읽고 <br>
                             이해하려니까 쉽지 않았어
@@ -187,7 +190,7 @@
                         </div>
                     </div>
     
-                    <div class="sec__02-right-answer">
+                    <div class="sec__02-right-answer fade-wrap2">
                         <p>
                             2박 3일 여행이라 일정이 촉박해서 <br>
                             한 시간 정도만 둘러 보고 왔던 거 같아
@@ -333,13 +336,13 @@
 
                 <div class="sec__04-user">
                     <div class="sec__04-user-wrap1">
-                        <div class="sec__04-user-box1">
+                        <div class="sec__04-user-box1 fade-wrap2">
                             <p>
                                 직접 들어가거나 하는 건 아니지만 한국 궁궐이 더 다가오는 느낌이라 단순한 글이 <br>
                                 나 영상보다 가깝게 느껴져요
                             </p>
                         </div>
-                        <div class="sec__04-user-box2">
+                        <div class="sec__04-user-box2 fade-wrap">
                             <p>
                                 직접 들어가거나 하는 건 아니지만 한국 궁궐이 더 다가오는 느낌이라 단순한 글이 <br>
                                 나 영상보다 가깝게 느껴져요
@@ -347,13 +350,13 @@
                         </div>
                     </div>
                     <div class="sec__04-user-wrap2">
-                        <div class="sec__04-user-box3">
+                        <div class="sec__04-user-box3 fade-wrap2">
                             <p>
                                 단순 해설 같은 것들을 자주 스킵하게 되지만, 미션을 깨며 재미 요소를 통해 <br>
                                 더 깊은 흥미와 집중력을 이끌어낼 수 있을 것 같습니다!
                             </p>
                         </div>
-                        <div class="sec__04-user-box4">
+                        <div class="sec__04-user-box4 fade-wrap">
                             <p>
                                 한국을 방문하고 싶지만 비용이나 제약 때문에 아직 방문하지 못한 사람들을 위해서 <br>
                                 도 좋을 것 같아요 
@@ -695,76 +698,261 @@
                 <div class="sec__05-rolling-circle"></div>
             </section>
 
+            <section id="sec-06" class="sec__06-wrap">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide sec__06-slide1">
+                            <div class="sec__06-slide-text">
+                                <p class="sec__06-project-goal">Project Goal</p>
+                                <h2>
+                                    오직 <span>‘원 포인트’</span>로 <br>
+                                    <span>‘서울 4대 궁궐’</span>만을 깊게 즐길 수 있도록
+                                </h2>
+                                <p class="sec__06-user-text">
+                                    ‘오라, 궁’은 ‘원 포인트 여행’ 트렌드를 바탕으로 비교적 짧은 시간 안에 <br>
+                                    서울 4대 궁궐에만 집중하고 몰입하며 투어할 수 있도록 서울 4대 궁궐에 <br>
+                                    맞춰진 세부적이고 믿음직스러운 깊은 정보를 제공해 드립니다.
+                                </p>
+                            </div>
+                            <div class="sec__06-img-wrap">
+                                <img src="./assets/images/source/sec-06-palace.webp" alt="">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide sec__06-slide2">
+                            <div class="sec__06-slide-text">
+                                <p class="sec__06-project-goal">Project Goal</p>
+                                <h2>
+                                    <span>‘AR 미션’</span>으로 단순 관람이 아닌, <br>
+                                    <span>직접 궁궐 탐방</span>하며 즐길 수 있도록
+                                </h2>
+                                <p class="sec__06-user-text">
+                                    ‘오라, 궁’은 사용자가 투어의 주체가 되어 능동적으로 서울 4대 궁궐 투어하여 <br>
+                                    단순 가이드, 관람보다 서울 4대 궁궐에게 더 가까이 다가갈 수 있도록 직접 역사 속 <br>
+                                    인물의 1인칭 시점으로 궁궐을 탐방하도록 유도하는 ‘AR 스탬프 미션’을 제공해 드립니다.
+                                </p>
+                            </div>
+                            <div class="sec__06-img-wrap">
+                                <img src="./assets/images/source/sec-06-palace2.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            
+                <div class="sec__06-bg-circle">
+                    <img src="./assets/images/source/sec-06-circle.svg" alt="">
+                </div>
+            </section>
+            
+
+            <section id="sec-07" class="sec__07-wrap">
+                <div class="sec__07-circle"></div>
+                <p class="sec__07-persona">Persona</p>
+                <h2>
+                    외국인 관광객들이 <br>
+                    보다 <span>더 특화된 투어</span>를 즐길 수 있도록
+                </h2>
+
+                <div class="sec__07-persona-wrap">
+                    <ul>
+                        <li class="persona__1 persona">
+                            <img src="./assets/images/source/sec__07-persona1.svg" alt="">
+                        </li>
+                        <li class="persona__2 persona">
+                            <img src="./assets/images/source/sec__07-persona2.svg" alt="">
+                        </li>
+                        <li class="persona__3 persona">
+                            <img src="./assets/images/source/sec__07-persona3.svg" alt="">
+                        </li>
+                        <li class="persona__4 persona">
+                            <img src="./assets/images/source/sec__07-persona4.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                
+                <svg class="sec__07-line">
+                    <line width="1" height="60" x1="150" y1="-100" x2="150" y2="200" stroke="#00A695"  stroke-width="1"/>
+                </svg>
+
+                <div class="sec__07-conclusion">
+                    <div class="sec__07-conclusion1 fade-wrap">
+                        <p>
+                            스스로 궁궐 탐방 도전! <br>
+                            <span>원 포인트 투어 속 AR 미션의 고도화</span>
+                        </p>
+                    </div>
+                    <div class="sec__07-conclusion2 fade-wrap2">
+                        <p>
+                            오직 4대 궁궐만! <br>
+                            <span>더 심화된 세부 콘텐츠 제공</span>
+                        </p>
+                    </div>
+                    <div class="sec__07-conclusion3 fade-wrap">
+                        <p>
+                            한정된 타깃을 고려한 <br>
+                            <span>외국인 사용자 맞춤형 기능</span>
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="sec-08" class="sec__08-wrap" >
+                <div class="sec__08-bg-opacity"></div>
+                <div class="sec__08-circle"></div>
+                <p>원포인트로 즐기는 서울 4대 궁궐 투어</p>
+                <div class="sec__08-title">
+                    <h2>한국 궁궐의 문을 열다</h2>
+                    <img src="./assets/images/logo/sec-08-logo2.svg" alt="">
+                </div>
+                <p class="sec__08-text">
+                    서울 4대 궁궐 투어 앱 <span>'오라궁'</span>은  외국인 관광객들이 1인칭 AR 미션으로 <br>
+                    서울 4대 궁궐을 스스로 탐색하며 즐기는 원 포인트 투어 서비스로, <br>
+                    한국 역사의 숨결이 깃든 4대 궁궐을 <span>‘느낄 수 있도록’</span>합니다.
+                </p>
+
+
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <svg width="100%" height="auto" viewBox="0 0 521 1227" fill="none" xmlns="http://www.w3.org/2000/svg" class="sec__08-line">
+                        <path d="M245 321H315C370.228 321 415 365.772 415 421V1227" stroke="url(#paint0_linear_1271_310)" stroke-width="2" stroke-dasharray="7 7"/>
+                        <path d="M245 321H1V236" stroke="url(#paint1_linear_1271_310)" stroke-width="2" stroke-dasharray="7 7"/>
+                        <path d="M521 1H102C46.7715 1 2 45.7716 2 101V106.602V323" stroke="#FAFAFA" stroke-width="2" stroke-dasharray="7 7"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_1271_310" x1="327.939" y1="786.845" x2="327.939" y2="1076.09" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FAFAFA"/>
+                                <stop offset="1" stop-color="#FAFAFA" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_1271_310" x1="1" y1="278.5" x2="657.582" y2="278.5" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.85" stop-color="#FAFAFA"/>
+                                <stop offset="1" stop-color="#FAFAFA" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                
+                    
+                
+                
+                
+                       
+                <div class="sec__08-content-img-wrap">
+                    <img src="./assets/images/source/sec_08-first.svg" alt="" class="sec__08-first">
+                    <img src="./assets/images/source/sec_08-second.svg" alt="" class="sec__08-second">
+                    <img src="./assets/images/source/sec_08-third.svg" alt="" class="sec__08-third">
+                </div>
+
+                <img src="./assets/images/logo/sec-08-logo1.svg" alt="" class="sec__08-oragug fade-wrap">
+
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; left: 50%; top: 0%; height: 160rem;" scrollamount="8" direction="down">
+                    <div class="keyword">
+                        <p>
+                            오직 서울 4대 궁궐만
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; left: 5%; top: 0%; height: 160rem;" scrollamount="10" direction="down">
+                    <div class="keyword">
+                        <p>
+                            오라, 궁
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; left: 70%; top: 0%; height: 160rem;" scrollamount="15" direction="down">
+                    <div class="keyword">
+                        <p>
+                            도전! AR 미션
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; right: 30%; top: 0%; height: 160rem;" scrollamount="6" direction="down">
+                    <div class="keyword">
+                        <p>
+                            서울 4대 궁궐을 즐기는 법
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; right: 70%; top: 0%; height: 160rem;" scrollamount="11" direction="down">
+                    <div class="keyword">
+                        <p>
+                            오직 서울 4대 궁궐만
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; left: 50%; top: 0%; height: 160rem;" scrollamount="14" direction="down">
+                    <div class="keyword">
+                        <p>
+                            오라, 궁
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; left: 60%; top: 0%; height: 160rem;" scrollamount="17" direction="down">
+                    <div class="keyword">
+                        <p>
+                            도전! AR 미션
+                        </p>
+                    </div>
+
+                </marquee>
+                <marquee id="falling-keyword" style="z-index: 2; position: absolute; right: 10%; top: 0%; height: 160rem;" scrollamount="20" direction="down">
+                    <div class="keyword">
+                        <p>
+                            서울 4대 궁궐을 즐기는 법
+                        </p>
+                    </div>
+                </marquee>
+            </section>
+
             <section id="sec-09"> <!-- section 09 -->
                 <h2 class="section__title">DESIGN GUIDE</h2>
 
                 <p class="typography__subtitle">TYPOGRAPHY</p>
                 <p class="typography__title">Pretendard</p>
 
-                <div class="typography__guide">
-                    <div class="typography__guide-font">
-                        <div class="typography__guide-item">
-                            <p>Title</p>
-                            <div>
-                                <p>thin?</p><span>??px</span>
-                            </div>
-                        </div>
-                        <div class="typography__guide-item">
+                <div class="sec__09-design-guide">
+                    <div class="sec__09-font-wrap">
+                        <div class="sec__09-headline fade-wrap">
                             <p>Headline</p>
-                            <div>
-                                <p>thin?</p><span>??px</span>
+                            <div class="sec__09-headline-font">
+                                <h3>한국 궁궐의 문을 열다</h3>
+                                <p>64px</p>
+                                <p>Bold</p>
                             </div>
                         </div>
-                        <div class="typography__guide-item">
-                            <p>Special case</p>
-                            <div>
-                                <p>thin?</p><span>??px</span>
+                        <div class="sec__09-title fade-wrap">
+                            <p>Title</p>
+                            <div class="sec__09-headline-font">
+                                <h3>한국 궁궐의 문을 열다</h3>
+                                <hr>
+                                <p>33px</p>
+                                <p>Bold</p>
                             </div>
                         </div>
-                        <div class="typography__guide-item">
+                        <div class="sec__09-body fade-wrap">
                             <p>Body</p>
-                            <div>
-                                <p>thin?</p><span>??px</span>
+                            <div class="sec__09-headline-font">
+                                <h3>한국 궁궐의 문을 열다</h3>
+                                <hr>
+                                <p>13px</p>
+                                <p>Light</p>
                             </div>
                         </div>
                     </div>
-
-                    <hr class="h-line">
-
-                    <div class="typography__font">
-                        <div class="typography__font-item">
-                            <p>한국 궁궐의<br>문을 열다</p>
-                        </div>
-                        <div class="typography__font-item">
-                            <p>한국 궁궐의<br>문을 열다</p>
-                        </div>
-                        <div class="typography__font-item">
-                            <p>한국 궁궐의<br>문을 열다</p>
-                        </div>
-                        <div class="typography__font-item">
-                            <p>한국 궁궐의<br>문을 열다</p>
-                        </div>
+    
+    
+                    <div class="sec__09-brand-color ">
+                        <p>Brand color</p>
+                        <img src="./assets/images/source/brand-color.svg" alt="" class="fade-wrap2">
                     </div>
                 </div>
-
-                <div class="brandcolor">
-                    <p class="brandcolor__title">DESIGN GUIDE</p>
-
-                    <div class="brandcolor__color">
-                        <div class="brandcolor__color-item">
-                            <div style="background-color: var(--coralRed);"></div>
-                            <span>#E16350 <br>RGB (225, 99, 80)</span>
-                        </div>
-                        <div class="brandcolor__color-item">
-                            <div style="background-color: var(--tealGreen);"></div>
-                            <span>#00A695 <br>RGB (0, 166, 149)</span>
-                        </div>
-                        <div class="brandcolor__color-item">
-                            <div style="background-color: var(--ivory);"></div>
-                            <span>#E7E6D2 <br>RGB (231, 230, 210)</span>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="icon__rolling-wrap">
                     <div class="icon__rolling-list">
@@ -842,6 +1030,157 @@
                         <div class="carousel"></div>
                     </div>
                 </div>
+
+                <div class="sec__10-spacer"></div>
+
+                <div class="sec__10-phone">
+                    <div class="sec__10-left">
+                        <div class="sec__10-text-wrap">
+                            <div class="sec__10-content-box">
+                            <h3 class="sec__10-ar-title">AR mission</h3>
+                                <h3>
+                                    한국 궁궐의 <br>
+                                    이야기를 따라, <br>
+                                    <span>4대 궁 소식부터 입장까지</span>
+                                </h3>
+                                <p>
+                                    4대 궁궐에 대한 각각의 상세 정보와 행사 일정, 입장권 예매 등 궁궐 투어 <br>
+                                    준비에 있어 필요로 하는 다양한 서비스를 제공해 주어 사용자가 부담 없이 <br>
+                                    한국 궁궐 본연의 이야기를 따라 투어할 수 있도록 합니다.
+                                </p>
+                            </div>
+                            <div class="sec__10-content-box">
+                                <h3>
+                                    간편하게 바로, <br> 
+                                    잊지 못할 한국 궁궐의 만남 <br>
+                                    <span>궁 관람 준비를 한번에</span>
+                                </h3>
+                                <p>
+                                    외국인 관광객들의 필수 코스인 한복 체험, <br>
+                                    한복에 대한 지식이 얕을 외국인들을 위해 사용자가 입고 싶은 스타일의 한복을<br>
+                                    기준으로 맞춤형 한복 대여점을 추천해 주고, 간편하게 예약할 수 있도록 하여<br>
+                                    외국인 관광객들에게 잊지 못 할 한국 궁궐과의 추억을 만들어 드립니다.
+                                </p>
+                            </div>
+                            <div class="sec__10-content-box">
+                                <h3>
+                                    한국 궁궐의
+                                    숨결을 느끼며 <span>탐험</span>하다, 
+                                    <span>AR 스탬프 미션</span>
+                                </h3>
+                                <p>
+                                    각 궁궐의 테마인 역사 속 인물이 되어 1인칭 시점으로 궁궐을 탐방하라는 <br>
+                                    미션과 카메라를 통한 장소 인식을 통해 미션을 수행하는 AR 스탬프 미션 <br>
+                                    서비스로 사용자가 투어의 주체가 되어 스스로 한국 궁궐의 숨결이 담긴 <br>
+                                    장소의 역사 지식을 느끼고 탐험하도록 합니다.
+                                </p>
+                            </div>
+                            <div class="sec__10-content-box">
+                                <h3>
+                                    당신만의 <span>궁궐 이야기</span>를 <br>
+                                    써 내려가 보세요, <br>
+                                    <span>AI 궁 관람 일정</span>
+                                </h3>
+                                <p>
+                                    한정된 여행 일정에 갇힌 관광객들을 위한 맞춤형 AI 궁 관람 일정 서비스로 <br>
+                                    나만의 궁궐 이야기, 궁궐 여행을 써 내려갈 수 있도록 사용자의 여행 스타일 <br>
+                                    을 분석하는 간단한 질문과 그에 따른 맞춤형 궁궐 일정을 제공해 드립니다.
+                                </p>
+                            </div>
+                            <div class="sec__10-content-box">
+                                <h3>
+                                    <span>한국의 정(情)</span>을 고이 담아 <br>
+                                    그대에게 전합니다, <br>
+                                    <span>해외로 전통 굿즈 선물하기</span>
+                                </h3>
+                                <p>
+                                    한국의 아름다운 전통이 담긴 전통 굿즈를 해외에 있는 지인들에게 주소를 <br>
+                                    몰라도 선물해 줄 수 있고, 상세한 필터링으로 보다 더 편리하게 한국의 정을 <br>
+                                    고이 담은 굿즈들이 전세계로 넘나들며 전달될 수 있도록 합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                        <div class="sec__10-right">
+      
+                            <!-- mobile content -->
+                            <div class="sec__10-mobileContent">
+                                <div class="sec__10-mobilePhoto phone1"></div>
+                                <h3>
+                                    한국 궁궐의 <br>
+                                    이야기를 따라, <br>
+                                    <span>4대 궁 소식부터 입장까지</span>
+                               </h3>
+                               <p>
+                                4대 궁궐에 대한 각각의 상세 정보와 행사 일정, 입장권 예매 등 궁궐 투어 <br>
+                                준비에 있어 필요로 하는 다양한 서비스를 제공해 주어 사용자가 부담 없이 <br>
+                                한국 궁궐 본연의 이야기를 따라 투어할 수 있도록 합니다.
+                               </p>
+                    
+                                <div class="sec__10-mobilePhoto phone2"></div>
+                                <h3>
+                                    간편하게 바로, <br> 
+                                    잊지 못할 한국 궁궐의 만남 <br>
+                                    <span>궁 관람 준비를 한번에</span>
+                                </h3> 
+                                <p>
+                                    외국인 관광객들의 필수 코스인 한복 체험, <br>
+                                    한복에 대한 지식이 얕을 외국인들을 위해 사용자가 입고 싶은 스타일의 한복을<br>
+                                    기준으로 맞춤형 한복 대여점을 추천해 주고, 간편하게 예약할 수 있도록 하여<br>
+                                    외국인 관광객들에게 잊지 못 할 한국 궁궐과의 추억을 만들어 드립니다.
+                                </p>
+                    
+                                <div class="sec__10-mobilePhoto phone3"></div>
+                                <h3>
+                                    한국 궁궐의
+                                    숨결을 느끼며 <span>탐험</span>하다, 
+                                    <span>AR 스탬프 미션</span>
+                                </h3>
+                                <p>
+                                    각 궁궐의 테마인 역사 속 인물이 되어 1인칭 시점으로 궁궐을 탐방하라는 <br>
+                                    미션과 카메라를 통한 장소 인식을 통해 미션을 수행하는 AR 스탬프 미션 <br>
+                                    서비스로 사용자가 투어의 주체가 되어 스스로 한국 궁궐의 숨결이 담긴 <br>
+                                    장소의 역사 지식을 느끼고 탐험하도록 합니다.
+                                </p>
+
+                                <div class="sec__10-mobilePhoto phone4"></div>
+                                <h3>
+                                    당신만의 <span>궁궐 이야기</span>를 <br>
+                                    써 내려가 보세요, <br>
+                                    <span>AI 궁 관람 일정</span>
+                                </h3>
+                                <p>
+                                    한정된 여행 일정에 갇힌 관광객들을 위한 맞춤형 AI 궁 관람 일정 서비스로 <br>
+                                    나만의 궁궐 이야기, 궁궐 여행을 써 내려갈 수 있도록 사용자의 여행 스타일 <br>
+                                    을 분석하는 간단한 질문과 그에 따른 맞춤형 궁궐 일정을 제공해 드립니다.
+                                </p>
+                    
+                                <div class="sec__10-mobilePhoto phone5"></div>
+                                <h3>
+                                    <span>한국의 정(情)</span>을 고이 담아 <br>
+                                    그대에게 전합니다, <br>
+                                    <span>해외로 전통 굿즈 선물하기</span>
+                                </h3>
+                                <p>
+                                    한국의 아름다운 전통이 담긴 전통 굿즈를 해외에 있는 지인들에게 주소를 <br>
+                                    몰라도 선물해 줄 수 있고, 상세한 필터링으로 보다 더 편리하게 한국의 정을 <br>
+                                    고이 담은 굿즈들이 전세계로 넘나들며 전달될 수 있도록 합니다.
+                                </p>
+                            </div>
+
+
+                            <div class="sec__10-desktopPhotos">
+                                <div class="sec__10-desktopPhoto phone1"></div>
+                                <div class="sec__10-desktopPhoto phone2"></div>
+                                <div class="sec__10-desktopPhoto phone3"></div>
+                                <div class="sec__10-desktopPhoto phone4"></div>
+                                <div class="sec__10-desktopPhoto phone5"></div>
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="sec__10-spacer"></div>
             </section> <!-- section 10 end -->
 
             <section id="sec-11"> <!-- section 11 -->
@@ -1101,8 +1440,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 
         <!-- ScrollTrigger 플러그인 추가 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 
 
     <script src="./assets/scripts/main.js"></script>
