@@ -193,14 +193,13 @@ class Carousel {
 
     setInitialPosition() {
         const viewportWidth = window.innerWidth;
-        const itemWidthPx = this.remToPx(this.itemWidth);
-        const gapPx = this.remToPx(this.itemGap);
-
-        // viewport의 중앙에서 시작하는 위치 계산
-        const offset = (viewportWidth / 2) + (itemWidthPx / 2);
-
-        this.initialOffset = offset;
-        this.setTranslate(offset);
+        // 예: 1920px 화면에서 1222px이 중앙이라면, 약 64%의 위치
+        const centerRatio = 0.53; // (1222/1920 ≈ 0.64)
+        
+        const centerPosition = viewportWidth * centerRatio;
+        
+        this.initialOffset = centerPosition;
+        this.setTranslate(centerPosition);
     }
 
     createCarouselItem(data) {
