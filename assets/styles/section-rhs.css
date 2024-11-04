@@ -23,6 +23,27 @@
     height: auto;
 }
 
+
+
+.sec-12__carousel {
+    width: 100%;
+    height: 50rem; /* 높이는 원하는 대로 조정 */
+    position: relative;
+}
+.sec-12__carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.sec-12__carousel-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 .sec-11__bg {
     width: 100%;
     margin-bottom: 15rem;
@@ -409,6 +430,31 @@
     width: 80rem;
     height: auto;
 }
+
+.swiper-container2{
+    width: 100%;
+    height: 100%;
+}
+.swiper-container2 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
 
 /* ========== section 13 ========== */
 #sec-13 {
