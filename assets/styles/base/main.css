@@ -88,7 +88,7 @@ textarea {
 .top-button:hover {
     background-color: var(--coralRedD); /* 버튼 호버 시 색상 */
 }
-/* 스크롤바 스타일 설정인데, 애들한테 물어보고 적용 할지 말지 결정해야 함  */
+
 /* 스크롤바 전체 스타일 설정 */
 ::-webkit-scrollbar {
     width: calc(100vw * 13 / 1920);
