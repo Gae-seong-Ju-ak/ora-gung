@@ -1411,13 +1411,10 @@ section {
     height: 40rem;
     border-radius: 100%;
     background-color: #E9F4EC;
-
     position: relative;
-    top: -35%;
+    transform: translateY(-93%); 
     z-index: -1;
-
     display: inline-block;
-
 }
 
 .sec__05-rolling-phone img {
