@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="한국 궁궐의 문을 열다 오라, 궁">
-    <meta name="keywords" content="오라, 궁, 키워드1, 키워드2, ...">
+    <meta name="keywords" content="오라, 궁, 원포인트로 즐기는 4대 궁궐 투어 , K-컬쳐, 경복궁, 창덕궁, 창경궁, 덕수궁">
     <meta name="author" content="TEAM 개성주악">
     <title>오라, 궁</title>
 
@@ -34,24 +34,14 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/styles/base/normalize.css">
-    <link rel="stylesheet" href="./assets/styles/base/main.css">
-    <link rel="stylesheet" href="./assets/styles/base/header.css">
-    <link rel="stylesheet" href="./assets/styles/base/section.css">
-    <link rel="stylesheet" href="./assets/styles/base/footer.css">
-    <link rel="stylesheet" href="./assets/styles/section-hhj.css">
-    <link rel="stylesheet" href="./assets/styles/section-rhs.css">
-    <!-- 코드 가독성 및 작업의 효율성을 위해 css 분리해서 작성하나, 추후 최종 배포 직전에 모든 CSS을 병합해 성능 최적화 -->
-
-
-    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/section.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
 
     <!-- Scripts -->
-
-    <!-- Alternate language versions -->
-    <link rel="alternate" hreflang="en" href="#">
-    <!-- 다국어 사이트의 경우, 다른 언어의 버전을 링크, 추후 다른 언어의 사이트 링크 추가하고 본 주석문 삭제, 추가 예정이 없다면 그냥 삭제 -->
+    <!-- none -->
 </head>
 
 <body>
@@ -1728,7 +1718,7 @@
                     <p class="footer__brand-subtext">Department of Digital Media Design, Kaywon University of Art and
                         Design</p>
                     <!-- 다운로드 버튼 및 아이콘 -->
-                    <a href="./assets/pdf/ora-gung_proposal.pdf" target="_blank" class="footer__button">기획서 전문 다운로드</a>
+                    <a href="./assets/pdf/오라궁_기획서.pdf" target="_blank" class="footer__button">기획서 전문 다운로드</a>
 
                     <div class="footer__icon-wrapper">
                         <a href="#" class="footer__icon-link" target="_blank"><img src="./assets/images/logo/figma_logo.svg"
@@ -1793,23 +1783,16 @@
 </div> <!-- container end -->
 
 
-        <!-- GSAP 라이브러리 추가 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- script -->
+    <!-- GSAP, jquery, Swiper.js, matter.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 
-        <!-- ScrollTrigger 플러그인 추가 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-
-
-        <!-- Swiper JS -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-
-
+    <!-- http 요청 최적화 위해 js 병합 -->
     <script src="./assets/scripts/main.js"></script>
-    <script src="./assets/scripts/script-hhj.js"></script>
-    <script src="./assets/scripts/script-rhs.js"></script>
 </body>
 
 </html>
