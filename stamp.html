@@ -127,12 +127,20 @@
             overflow-x: hidden;
         }
 
+        .logo{
+            margin-bottom: 50px;
+            margin-left: 35px;
+        }
+
         .sticker-select {
             width: 500px;
-            margin-bottom: 20px;
+            margin-bottom: 80px;
             /* 아래쪽 여백 추가 */
             text-align: center;
             justify-content: space-between;
+        }
+        .sticker-select:last-child{
+            margin-bottom: 0;
         }
 
         .sticker-group {
@@ -159,18 +167,13 @@
         }
 
         .sticker img {
-            width: 237.5px;
+            width: 200px;
             /* 각 스티커의 너비 설정 */
-            height: 170.08px;
+            height: 150.08px;
             /* 각 스티커의 높이 설정 */
         }
 
-        .sticker img {
-            width: 237.5px;
-            /* 각 스티커의 너비 설정 */
-            height: 170.08px;
-            /* 각 스티커의 높이 설정 */
-        }
+
 
         .drop-zone-wrap {
             width: 100%;
@@ -199,31 +202,155 @@
             font-size: 15px;
             font-weight: bold;
             color: white;
+            overflow: hidden;
+            transition: 200ms ease all;
         }
 
-        #resetButton:hover {
-            background-color: #01a090;
+                /* 호버 시 텍스트 색상 변경 */
+                #resetButton:hover {
+            color: #01A695;
+            background-color: #00877300;
+        }
+
+        /* 상단 및 하단 가로 테두리 */
+        #resetButton:before,
+        #resetButton:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            background: #01A695;
+            transition: 400ms ease all;
+        }
+
+        /* 상단 테두리 */
+        #resetButton:before {
+            top: 0;
+            left: 0;
+        }
+
+        /* 하단 테두리 */
+        #resetButton:after {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* 호버 시 가로 테두리 확장 */
+        #resetButton:hover:before,
+        #resetButton:hover:after {
+            width: 100%;
+        }
+
+        /* 좌우 세로 테두리 */
+        #resetButton .side-before,
+        #resetButton .side-after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 0;
+            background: #01A695;
+            transition: 400ms ease all;
+        }
+
+        /* 왼쪽 세로 테두리 */
+        #resetButton .side-before {
+            left: 0;
+            top: 0;
+        }
+
+        /* 오른쪽 세로 테두리 */
+        #resetButton .side-after {
+            right: 0;
+            bottom: 0;
+        }
+
+        /* 호버 시 세로 테두리 확장 */
+        #resetButton:hover .side-before,
+        #resetButton:hover .side-after {
+            height: 100%;
         }
 
         #saveButton {
             position: absolute;
-            /* 절대 위치 지정 */
             bottom: 20px;
-            /* 아래쪽으로 20px */
             right: 20px;
-            /* 오른쪽으로 20px */
             width: 200px;
             height: 50px;
-            background-color: #01A695;
-            border: 0;
+            background-color: #01A695; /* 배경색 유지 */
             font-size: 15px;
             font-weight: bold;
-            color: white;
+            color: #ffffff;
+            border: none; /* 기본 테두리 제거 */
+            line-height: 46px;
+            text-align: center;
+            overflow: hidden;
+            transition: 200ms ease all;
         }
 
+        /* 호버 시 텍스트 색상 변경 */
         #saveButton:hover {
-            background-color: #01a090;
+            color: #01A695;
+            background-color: #00877300;
         }
+
+        /* 상단 및 하단 가로 테두리 */
+        #saveButton:before,
+        #saveButton:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            background: #01A695;
+            transition: 400ms ease all;
+        }
+
+        /* 상단 테두리 */
+        #saveButton:before {
+            top: 0;
+            left: 0;
+        }
+
+        /* 하단 테두리 */
+        #saveButton:after {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* 호버 시 가로 테두리 확장 */
+        #saveButton:hover:before,
+        #saveButton:hover:after {
+            width: 100%;
+        }
+
+        /* 좌우 세로 테두리 */
+        #saveButton .side-before,
+        #saveButton .side-after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 0;
+            background: #01A695;
+            transition: 400ms ease all;
+        }
+
+        /* 왼쪽 세로 테두리 */
+        #saveButton .side-before {
+            left: 0;
+            top: 0;
+        }
+
+        /* 오른쪽 세로 테두리 */
+        #saveButton .side-after {
+            right: 0;
+            bottom: 0;
+        }
+
+        /* 호버 시 세로 테두리 확장 */
+        #saveButton:hover .side-before,
+        #saveButton:hover .side-after {
+            height: 100%;
+        }
+
 
         .sticker-select h2 {
             padding-top: 10px;
@@ -233,6 +360,8 @@
             display: inline-block;
             border-radius: 30px;
             color: #fff;
+            font-weight: 500;
+            margin-bottom: 50px;
         }
 
         .special img {
@@ -245,6 +374,9 @@
 <body>
     <div class="sec-sticker-wrap">
         <div class="sec-sticker-container">
+            <div class="logo">
+                <img src="assets/images/logo/logo-symbol.svg" alt="">
+            </div>
             <div class="sticker-select">
                 <h2>경복궁</h2>
                 <div class="sticker-group">
@@ -322,7 +454,7 @@
                 </div>
             </div>
             <div class="sticker-select special">
-                <h2>Special</h2>
+                <h2>SPECIAL</h2>
                 <div class="sticker-group">
                     <div class="sticker sticker-red draggable" draggable="true">
                         <img src="./assets/images/source/birds-01.png" alt="">
@@ -667,6 +799,7 @@
         $("#resetButton").on("click", function () {
             $("#dropZone").empty();
         });
+
     </script>
 </body>
 
