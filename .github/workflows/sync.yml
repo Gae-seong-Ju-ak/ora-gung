@@ -3,7 +3,7 @@ name: Sync to Personal Repository
 on:
   push:
     branches:
-      - main  # 또는 master (메인 브랜치명에 따라 수정)
+      - main  # 혹은 master
 
 jobs:
   sync:
@@ -20,4 +20,4 @@ jobs:
 
       - name: Push to Personal Repository
         run: |
-          git push personal main:main  # [소스브랜치]:[타겟브랜치]
+          git push personal main:main  # 혹은 main:master
