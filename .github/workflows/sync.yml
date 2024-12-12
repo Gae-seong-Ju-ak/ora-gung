@@ -17,7 +17,8 @@ jobs:
       - name: Add Remote Repository
         run: |
           git remote add personal https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/toosign00/ora-gung.git
+          git remote -v
 
       - name: Push to Personal Repository
         run: |
-          git push personal main:main 
+          git push personal main:main  # [소스 브랜치]:[타겟 브랜치]
