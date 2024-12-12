@@ -1,0 +1,23 @@
+name: Sync to Personal Repository
+
+on:
+  push:
+    branches:
+      - main  # 또는 master (메인 브랜치명에 따라 수정)
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Add Remote Repository
+        run: |
+          git remote add personal https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/toosign00/ora-gung.git
+
+      - name: Push to Personal Repository
+        run: |
+          git push personal main:main  # [소스브랜치]:[타겟브랜치]
