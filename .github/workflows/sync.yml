@@ -21,4 +21,4 @@ jobs:
 
       - name: Push to Personal Repository
         run: |
-          git push personal main:main
+          git push personal main:main # 소스 브랜치:대상 브랜치
